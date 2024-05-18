@@ -3,13 +3,13 @@ import "./Home.scss";
 
 import Header from "components/Header";
 import Footer from "components/Footer";
-import Info from "components/Info";
+import List from "components/List";
 
 const Home = () =>{
     return(
         <div className="home_overall">
         <Header />
-        <Info />
+         <List />
         <Footer />
         </div>
        

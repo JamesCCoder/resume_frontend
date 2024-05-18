@@ -1,6 +1,7 @@
 import './App.scss';
 
 import Home from 'pages/Home';
+import Detail from 'pages/Detail';
 
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
     //     <div className='app_project'>project 3</div>
     // </div>
     <Home />
+    // <Detail />
   );
 }
 
