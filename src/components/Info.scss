@@ -1,0 +1,28 @@
+.info_overall{
+    width : 100%;
+    height : calc(100% - 3rem);
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content:flex-start;
+    .info_table{
+        margin:5rem 0 0 0;
+        border:1px solid #ccc;
+        border-collapse: separate;
+        border-spacing: 1rem;
+        td, th {
+            padding: 0.8rem; 
+        }
+    }
+    .info_button{
+        margin:2rem 0 0 0;
+        background-color: royalblue;
+        color:white;
+        border:1px solid royalblue;
+        padding:5px 10px;
+        &:hover{
+            background-color: white;
+            color:royalblue;
+        }
+    }
+}
