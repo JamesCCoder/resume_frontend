@@ -1,6 +1,8 @@
 import React from "react";
 import "./List.scss";
 
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+
 const List = () =>{
    return (
        <div className="list_overall">
@@ -16,20 +18,12 @@ const List = () =>{
                    <td>James</td>
                    <td>male</td>
                    <td>james@gmail.com</td>
-                   <button className="list_detail">detail</button>
-                   <button className="list_edit">edit</button>
+                   <Link to = "/project1/detail" className="list_detail">detail</Link>
+                   <Link to = "/project1/add" className="list_edit">edit</Link>
                    <button className="list_delete">delete</button>
-               </tr>
-               <tr>
-                   <td>2</td>
-                   <td>Justin</td>
-                   <td>male</td>
-                   <td>justin@gmail.com</td>
-                   <button>detail</button>
-                   <button>edit</button>
-                   <button>delete</button>
-               </tr>
-           </table>
+               </tr>   
+           </table>          
+            <Link to = "/project1/add" className="list_button_add">add</Link>           
        </div>
    )
 }

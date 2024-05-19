@@ -1,6 +1,8 @@
 import React from "react";
 import "./Info.scss";
 
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+
 const Info = () => {
     return (
         <div className="info_overall">
@@ -23,7 +25,7 @@ const Info = () => {
                 </tr>
 
             </table>
-            <button className="info_button">back to main</button>
+            <Link to = "/project1" className="info_button">back to main</Link>
         </div>
     )
 }

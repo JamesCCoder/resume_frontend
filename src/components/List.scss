@@ -10,14 +10,15 @@
         border:1px solid #ccc;
         border-collapse: separate;
         border-spacing: 1rem;
-        button{
-            margin: 0 0.5rem;
-            padding:0.2rem 0.5rem;
-        }
+       
         .list_detail{
             border:1px solid royalblue;
             background-color: royalblue;
             color:white;
+            text-decoration: none;
+            margin: 0 0.5rem;
+            padding:0.2rem 0.5rem;
+            font-size: 0.9rem;
             &:hover{
                 background-color: white;
                 color:royalblue;
@@ -27,6 +28,10 @@
             border:1px solid royalblue;
             background-color: royalblue;
             color:white;
+            margin: 0 0.5rem;
+            padding:0.2rem 0.5rem;
+            font-size: 0.9rem;
+            text-decoration: none;
             &:hover{
                 background-color: white;
                 color:royalblue;
@@ -36,6 +41,9 @@
             border:1px solid red;
             background-color: red;
             color:white;
+            margin: 0 0.5rem;
+            padding:0.2rem 0.5rem;
+            font-size: 0.9rem;
             &:hover{
                 background-color: white;
                 color:red;
@@ -43,4 +51,18 @@
         }
     }
 
+    .list_button_add{
+        margin: 2rem 0 0 0;
+        padding:0.2rem 1rem;
+        border: 1px solid royalblue;
+        background-color: royalblue;
+        color:white;
+        text-decoration: none;
+        &:hover{
+            background-color: white;
+            color:royalblue;
+        }
+    }
+   
+    
 }

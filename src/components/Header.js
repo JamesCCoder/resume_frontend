@@ -1,11 +1,13 @@
 import React from "react";
 import "./Header.scss";
 
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+
 const Header = () =>{
    return (
        <div className="header_overall">
            <div className="header_title">Student management system</div>
-           <button className="header_button">Back to projects</button>
+           <Link to = "/" className="header_button">Back to projects</Link>
        </div>
    )
 }
