@@ -1,31 +1,77 @@
-import React from "react";
+import React,{useState, useEffect} from "react";
 import "./List.scss";
 
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 
+import axios from 'axios';
+
 const List = () =>{
+    const [students, setStudents] = useState([]);
+    const [error, setError] = useState(null);
+    
+    useEffect(() => {
+        const fetchStudents = async () => {
+        try {
+            const response = await axios.get('http://localhost:8080/students');
+            setStudents(response.data); 
+        } catch (error) {
+            setError('Error fetching data');
+            console.error('Error fetching data:', error);
+        }
+        };
+        fetchStudents();
+  }, []);
+
+    const deleteStudent = async (id) => {
+        try {
+            await axios.delete(`http://localhost:8080/students/${id}`);
+               setStudents(students.filter(student => student.id !== id));
+            } catch (error) {
+               console.error('Error deleting data:', error);
+               setError('Error deleting data');
+        }
+    };
+
+  if (error) {
+    return <div>{error}</div>;
+  }
    return (
-       <div className="list_overall">
-           <table className="list_table">
-               <tr>
-                   <td>id</td>
-                   <td>name</td>
-                   <td>sex</td>
-                   <td>email</td>
-               </tr>
-               <tr>
-                   <td>1</td>
-                   <td>James</td>
-                   <td>male</td>
-                   <td>james@gmail.com</td>
-                   <Link to = "/project1/detail" className="list_detail">detail</Link>
-                   <Link to = "/project1/add" className="list_edit">edit</Link>
-                   <button className="list_delete">delete</button>
-               </tr>   
-           </table>          
-            <Link to = "/project1/add" className="list_button_add">add</Link>           
-       </div>
-   )
+    <>
+      {students.length === 0 ? (
+        <p>No students found</p>
+      ) : (
+        <div className="list_overall">
+          <table className="list_table">
+            <thead>
+              <tr>
+                <th>id</th>
+                <th>name</th>
+                <th>sex</th>
+                <th>email</th>
+                <th>actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              {students.map((student) => (
+                <tr key={student.id}>
+                  <td>{student.id}</td>
+                  <td>{student.name}</td>
+                  <td>{student.sex}</td>
+                  <td>{student.email}</td>
+                  <td>
+                    <Link to={`/project1/${student.id}`} className="list_detail">detail</Link>
+                    <Link to="/project1/add" className="list_edit">edit</Link>
+                    <button className="list_delete" onClick={() => deleteStudent(student.id)}>delete</button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <Link to="/project1/add" className="list_button_add">add</Link>
+        </div>
+      )}
+    </>
+  );
 }
 
 export default List;
