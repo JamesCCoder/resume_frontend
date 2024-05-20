@@ -1,18 +1,21 @@
 import React,{useState, useEffect} from "react";
 import "./List.scss";
 
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import axios from 'axios';
 
 const List = () =>{
+
+    const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
+   
     const [students, setStudents] = useState([]);
     const [error, setError] = useState(null);
     
     useEffect(() => {
         const fetchStudents = async () => {
         try {
-            const response = await axios.get('http://localhost:8080/students');
+            const response = await axios.get(`${apiBaseUrl}/students`);
             setStudents(response.data); 
         } catch (error) {
             setError('Error fetching data');
@@ -24,7 +27,7 @@ const List = () =>{
 
     const deleteStudent = async (id) => {
         try {
-            await axios.delete(`http://localhost:8080/students/${id}`);
+            await axios.delete(`${apiBaseUrl}/students/${id}`);
                setStudents(students.filter(student => student.id !== id));
             } catch (error) {
                console.error('Error deleting data:', error);
@@ -60,7 +63,7 @@ const List = () =>{
                   <td>{student.email}</td>
                   <td>
                     <Link to={`/project1/${student.id}`} className="list_detail">detail</Link>
-                    <Link to="/project1/add" className="list_edit">edit</Link>
+                    <Link to={`/project1/${student.id}/edit`} className="list_edit">edit</Link>
                     <button className="list_delete" onClick={() => deleteStudent(student.id)}>delete</button>
                   </td>
                 </tr>

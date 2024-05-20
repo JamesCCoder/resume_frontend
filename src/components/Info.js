@@ -3,10 +3,11 @@ import "./Info.scss";
 
 import axios from 'axios';
 
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 
 const Info = () => {
+    const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
     const { id } = useParams();
     const [student, setStudent] = useState(null);
     const [error, setError] = useState(null);
@@ -15,7 +16,7 @@ const Info = () => {
      useEffect(() => {
         const fetchStudent = async () => {
         try {
-            const response = await axios.get(`http://localhost:8080/students/${id}`);
+            const response = await axios.get(`${apiBaseUrl}/students/${id}`);
             setStudent(response.data); 
             setLoading(false); 
         } catch (error) {
@@ -56,7 +57,10 @@ const Info = () => {
                         <td>{student.email}</td>
                     </tr>
                 </table>
-                <Link to = "/project1" className="info_button">back to main</Link>
+                <div className="info_buttons">
+                    <Link to = {`/project1/${id}/edit`} className="info_button_edit">edit</Link>
+                    <Link to = "/project1" className="info_button_back">back to main</Link>
+                </div>
             </div>
         ) : (
         <div>No student found</div>

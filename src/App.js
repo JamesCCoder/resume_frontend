@@ -1,7 +1,7 @@
 import './App.scss';
 
 
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function App() {
   return ( 

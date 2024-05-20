@@ -8,9 +8,9 @@ import List from "components/List";
 const Home = () =>{
     return(
         <div className="home_overall">
-        <Header />
-         <List />
-        <Footer />
+            <Header />
+            <List />
+            <Footer />
         </div>
        
     )

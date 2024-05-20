@@ -1,11 +1,16 @@
-import React,{useState} from "react";
+import React,{useState, useEffect} from "react";
 import "./Input.scss";
 
 import axios from 'axios';
 
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 const Input = () =>{
+
+    const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
+
+    const navigate = useNavigate();
+    const { id } = useParams();
     const [formData, setFormData] = useState({
         name: '',
         sex: '',
@@ -13,6 +18,24 @@ const Input = () =>{
     });
 
     const [error, setError] = useState(null);
+    const [validationError, setValidationError] = useState('');
+
+    useEffect(() => {
+        if (id) {
+            // will get data if id exists -> eidt model
+            const fetchStudentData = async () => {
+                try {
+                    const response = await axios.get(`${apiBaseUrl}/students/${id}`);
+                    setFormData(response.data);
+                } catch (error) {
+                    setError('Error fetching student data');
+                    console.error('Error fetching student data:', error);
+                }
+            };
+
+            fetchStudentData();
+        }
+    }, [id]);
 
     const handleChange = (e) => {
         setFormData({
@@ -21,19 +44,49 @@ const Input = () =>{
         });
     };
 
+
+    const validate = () => {
+        if (!formData.name) {
+            return 'Name is required';
+        }
+        if (!formData.email) {
+            return 'Email is required';
+        }
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(formData.email)) {
+            return 'Invalid email address';
+        }
+        if (!formData.sex) {
+            return 'Sex is required';
+        }
+        return '';
+    };
+
     const submitClick = async(e) =>{
-       e.preventDefault();
-    try {
-      await axios.post('http://localhost:8080/students', formData);
-      setFormData({
-        name: '',
-        sex: '',
-        email: ''
-      });
-    } catch (error) {
-      setError('Error adding student');
-      console.error('Error adding student:', error);
-    }
+        e.preventDefault();
+        const validationMessage = validate();
+        if (validationMessage) {
+            setValidationError(validationMessage);
+            return;
+        }
+        try {
+         if (id) {
+                await axios.put(`${apiBaseUrl}/students/${id}`, formData);
+            } else {
+                await axios.post(`${apiBaseUrl}/students`, formData);
+            }
+
+                setFormData({
+                    name: '',
+                    sex: '',
+                    email: ''
+                });
+
+            navigate('/project1');
+            } catch (error) {
+                setError(id ? 'Error updating student' : 'Error adding student');
+                console.error(id ? 'Error updating student:' : 'Error adding student:', error);
+            }
     }
 
     const cancelClick = (e) =>{
@@ -42,33 +95,53 @@ const Input = () =>{
         sex: '',
         email: ''
       });
+      navigate('/project1');
     }
+
+
    return (
        <div className="input_overall">
            <form className="input_form" autoComplete="off" onSubmit={submitClick}>
                 <div>
-                    <label htmlFor="id" className="input_label">name: </label>
-                    <input value={formData.name} onChange={handleChange} type="text" id="id" name="id" className="input_inputbox" autoComplete="off"></input>
+                    <label htmlFor="name" className="input_label">name: </label>
+                    <input value={formData.name} onChange={handleChange} type="text" id="name" name="name" className="input_inputbox" autoComplete="off"></input>
                 </div>
                 
                 <div className="input_radio">
-                    <input type="radio" id="option1" name="option" value="option1" className="radio_input"/>
-                    <label htmlFor="option1" className="radio_label">male</label>
-                    <input type="radio" id="option2" name="option" value="option2" className="radio_input"/>
-                    <label htmlFor="option2" className="radio_label">female</label>
+                    <input 
+                        type="radio" 
+                        id="male" 
+                        name="sex" 
+                        value="male" 
+                        checked={formData.sex === 'male'} 
+                        className="radio_input"
+                        onChange={handleChange}
+                    />
+                    <label htmlFor="male" className="radio_label">male</label>
+                    <input 
+                        type="radio" 
+                        id="female" 
+                        name="sex" 
+                        value="female"  
+                        checked={formData.sex === 'female'} 
+                        className="radio_input"
+                        onChange={handleChange}
+                    />
+                    <label htmlFor="female" className="radio_label">female</label>
                 </div>
                 
                 <div>
                     <label htmlFor="email" className="input_label">email: </label>
-                    <input value={formData.name} onChange={handleChange} type="text" id="email" name="email" className="input_inputbox" autoComplete="off"></input>
+                    <input value={formData.email} onChange={handleChange} type="text" id="email" name="email" className="input_inputbox" autoComplete="off"></input>
                 </div>
+                {validationError && <p className="error">{validationError}</p>}
                 <div className="input_buttons">
-                    <Link to = "/project1"  className="input_submit" onClick={e => submitClick(e)}>
-                       add
-                    </Link>
-                    <Link to = "/project1" className="input_cancel" onClick={e => cancelClick(e)}>
+                    <button className="input_submit" type="submit">
+                       {id ? 'update' : 'add'}
+                    </button>
+                    <button className="input_cancel" type="button" onClick={e => cancelClick(e)}>
                        cancel
-                    </Link>
+                    </button>
                 </div>
                
            </form>

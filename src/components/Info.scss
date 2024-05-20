@@ -14,16 +14,35 @@
             padding: 0.8rem; 
         }
     }
-    .info_button{
-        margin:2rem 0 0 0;
-        background-color: royalblue;
-        color:white;
-        border:1px solid royalblue;
-        padding:5px 10px;
-        text-decoration: none;
-        &:hover{
-            background-color: white;
-            color:royalblue;
+    .info_buttons{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .info_button_edit{
+            margin:1.5rem 0 0 0;
+            background-color: royalblue;
+            color:white;
+            border:1px solid royalblue;
+            padding:4px 10px;
+            text-decoration: none;
+            &:hover{
+                background-color: white;
+                color:royalblue;
+            }
+        }
+        .info_button_back{
+            margin:0.8rem 0 0 0;
+            background-color: royalblue;
+            color:white;
+            border:1px solid royalblue;
+            padding:4px 20px;
+            text-decoration: none;
+            &:hover{
+                background-color: white;
+                color:royalblue;
+            }
         }
     }
+
 }

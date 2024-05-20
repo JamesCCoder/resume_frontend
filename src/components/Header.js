@@ -1,7 +1,7 @@
 import React from "react";
 import "./Header.scss";
 
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Header = () =>{
    return (
