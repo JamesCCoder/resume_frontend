@@ -76,6 +76,8 @@
                     display: flex;
                     align-items: center;
                     justify-content: center;
+                    text-decoration: none;
+                    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
                     &:hover{
                         background-color: white;
                         color:black;
@@ -101,17 +103,30 @@
                    }
                    .linkedin-icon{
                        color:rgb(0,255,165);
+                       &:hover{
+                           color:white;
+                       }
+                       &:focus{
+                           color:white;
+                       }
                    }
                    .github-link{
                        display: flex;
                        align-items: center;
                        justify-content: center;
                         margin-left: 0.5rem;
+                        
                    }
                    
                   
                    .portfolio_giticon{
                        color:rgb(0,255,165);
+                       &:hover{
+                           color:white;
+                       }
+                       &:focus{
+                           color:white;
+                       }
                    }
                
            }
@@ -155,7 +170,7 @@
         height: 100%;
         border-radius: 50%;
         border: 3px solid rgb(0,255,165);
-        top:-4rem;
+        top:-2rem;
         box-sizing: border-box;
         animation: rotate 5s linear infinite;
         clip-path: polygon(

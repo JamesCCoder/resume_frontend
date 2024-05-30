@@ -5,6 +5,7 @@ import { faGithub, faLinkedin, faLinkedinIn } from '@fortawesome/free-brands-svg
 
 import avatar from "../../static/avator.png";
 import jpg from "../../static/image.jpg";
+import resume from "../../static/Resume_jian wu.pdf";
 
 const Introduction = () =>{
     const [showBorder, setShowBorder] = useState(false);
@@ -26,8 +27,10 @@ const Introduction = () =>{
                <div className="portfolio_introduction_left_five">I am proficient in various prgramming languages and technologies.</div>
                <div className="portfolio_introduction_left_six">
                    <div className="portfolio_introduction_left_six_resume">
-                       <button className="portfolio_cv">Download CV</button>
-                   </div>
+                        <a href={resume} download="My_Resume.pdf" className="portfolio_cv">
+                            Download Resume
+                        </a>
+                    </div>
                    <div className="portfolio_introduction_left_six_two">
                             <a
                                 className="linkedin-link"
