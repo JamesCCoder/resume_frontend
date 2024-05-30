@@ -1,11 +1,16 @@
-import Header from "./components/Header";
+import Header from "MainPage//components/Header";
+import Footer from 'MainPage/components/Footer';
+import Introduction from "MainPage//components/Introduction";
 import React from "react";
 import "./Portfolio.scss";
+
 
 const Portfolio = () =>{
    return(
        <div>
            <Header />
+           <Introduction />
+           <Footer />
        </div>
    )
 }

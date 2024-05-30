@@ -15,7 +15,7 @@ const Footer = () =>{
         const targetNumberTwo = 26;
         const targetNumberThree = 8;
         const targetNumberFour = 500;
-        const duration = 1000; // Animation duration in milliseconds
+        const duration = 1500; // Animation duration in milliseconds
         const intervalOne = duration / (targetNumberOne - currentNumberOne);
         const intervalTwo = duration / (targetNumberTwo - currentNumberTwo);
         const intervalThree = duration / (targetNumberThree - currentNumberThree);
