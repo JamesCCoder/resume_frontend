@@ -1,9 +1,9 @@
 import React from "react";
 import "./Detail.scss";
 
-import Header from "components/Header";
-import Footer from "components/Footer";
-import Info from "components/Info";
+import Header from "Project1/components/Header";
+import Footer from "Project1/components/Footer";
+import Info from "Project1/components/Info";
 
 const Detail = () =>{
     return(

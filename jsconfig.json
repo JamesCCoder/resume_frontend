@@ -3,10 +3,10 @@
         "baseUrl": "src",
         "paths": {
             "components/*": [
-                "components/*"
+                "Project1/components/*"
             ],
             "pages/*": [
-                "pages/*"
+                "Project1/pages/*"
             ]
         }
     },
