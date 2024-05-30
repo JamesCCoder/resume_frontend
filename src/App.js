@@ -3,6 +3,7 @@ import './App.scss';
 
 import { Link } from 'react-router-dom';
 import Portfolio from 'MainPage/Portfolio';
+import Footer from 'MainPage/components/Footer';
 
 function App() {
   return ( 
@@ -17,6 +18,7 @@ function App() {
             <Link to = "/project3" className='app_project'>project 3</Link>
           </div> */}
           <Portfolio />
+          <Footer />
       </div>
   );
 }

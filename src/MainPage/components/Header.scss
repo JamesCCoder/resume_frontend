@@ -5,13 +5,15 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     .portfolio_header_left{
         margin-left: 18rem;
+        margin-right: 12rem;
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: flex-end;
+        
         .portfolio_header_left_name{
              font-family: 'Trebuchet MS', 'Arial Narrow', Arial, sans-serif;
              font-size: x-large;
@@ -89,21 +91,21 @@
         }
         .portfolio_header_right_contact{
             background-color: rgb(30,29,38);
-             margin: 0 1rem;
-             font-family: 'Trebuchet MS', 'Arial Narrow', Arial, sans-serif;
-             color: white;
-             font-size: small;
-             font-weight: bold;
-             padding:0.5rem 0;
-             border:none;
-             &:hover{
-                color:rgb(0,255,165);
-                box-shadow: 0 2px 0 0 rgb(0,255,165);
-             }
-             &:focus{
-                color:rgb(0,255,165);
-                box-shadow: 0 2px 0 0 rgb(0,255,165);
-             }
+            margin: 0 1rem;
+            font-family: 'Trebuchet MS', 'Arial Narrow', Arial, sans-serif;
+            color: white;
+            font-size: small;
+            font-weight: bold;
+            padding:0.5rem 0;
+            border:none;
+            &:hover{
+            color:rgb(0,255,165);
+            box-shadow: 0 2px 0 0 rgb(0,255,165);
+            }
+            &:focus{
+            color:rgb(0,255,165);
+            box-shadow: 0 2px 0 0 rgb(0,255,165);
+            }
         }
         .portfolio_header_right_hireme{
              margin: 0 1rem;

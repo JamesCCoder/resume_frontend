@@ -1,0 +1,97 @@
+.portfolio_footer{
+    background-color: rgb(30,29,38);
+    width:100%;
+    height:5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    .portfolio_footer_first{
+        margin-left: 18rem;
+        width:100%;
+        color:white;
+        display: flex;
+        flex-direction: row;
+        .portfolio_footer_first_one{
+            font-size:40px;
+            font-family: 'Trebuchet MS', 'Arial Narrow', Arial, sans-serif;
+        }
+        .portfolio_footer_first_two{
+            font-family: 'Arial', 'Arial Narrow', Arial, sans-serif;
+            font-size: 12px;
+            overflow-wrap: break-word; 
+            width:80px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-left: 1rem;
+        }
+    }
+    .portfolio_footer_second{
+        width:100%;
+        color:white;
+        display: flex;
+        flex-direction: row;
+        
+         .portfolio_footer_second_one{
+            font-size:40px;
+            font-family: 'Trebuchet MS', 'Arial Narrow', Arial, sans-serif;
+        }
+        .portfolio_footer_second_two{
+            font-family: 'Arial', 'Arial Narrow', Arial, sans-serif;
+            font-size: 12px;
+            overflow-wrap: break-word; 
+            width:80px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-left: 1rem;
+        }
+    }
+    .portfolio_footer_third{
+        width:100%;
+        color:white;
+         display: flex;
+        flex-direction: row;
+    
+         .portfolio_footer_third_one{
+            font-size:40px;
+            font-family: 'Trebuchet MS', 'Arial Narrow', Arial, sans-serif;
+        }
+        .portfolio_footer_third_two{
+            font-family: 'Arial', 'Arial Narrow', Arial, sans-serif;
+            font-size: 12px;
+            overflow-wrap: break-word; 
+            width:80px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-left: 1rem;
+        }
+    }
+    .portfolio_footer_fourth{
+        width:100%;
+        color:white;
+         display: flex;
+        flex-direction: row;
+        margin-right: 18rem;
+         .portfolio_footer_fourth_one{
+            font-size:40px;
+            font-family: 'Trebuchet MS', 'Arial Narrow', Arial, sans-serif;
+        }
+        .portfolio_footer_fourth_two{
+            font-family: 'Arial', 'Arial Narrow', Arial, sans-serif;
+            font-size: 12px;
+            overflow-wrap: break-word; 
+            width:60px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-left: 1rem;
+        }
+    }
+}
