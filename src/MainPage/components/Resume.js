@@ -3,7 +3,7 @@ import Logo from "./Logo";
 import "./Resume.scss";
 import Smallblock from "./Smallblock";
 
-import { faHtml5,faCss3,faJs,faReact,faJava, faDocker, faAws, faJenkins } from '@fortawesome/free-brands-svg-icons';
+import { faHtml5,faCss3,faJs,faReact,faJava, faDocker, faAws, faJenkins, faFontAwesome, faBootstrap, faGithub, faMedapps } from '@fortawesome/free-brands-svg-icons';
 
 const Resume = () =>{
    return(
@@ -38,6 +38,10 @@ const Resume = () =>{
                     <Logo iconName={faDocker}/>
                     <Logo iconName={faJenkins}/>
                     <Logo iconName={faAws}/>
+                    <Logo iconName={faFontAwesome}/>
+                    <Logo iconName={faBootstrap}/>
+                    <Logo iconName={faGithub}/>
+                    <Logo iconName={faMedapps}/>
                </div>
              
            </div>
