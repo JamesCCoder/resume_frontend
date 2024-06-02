@@ -1,25 +1,49 @@
 import './App.scss';
-
-
-import { Link } from 'react-router-dom';
+import React from "react";
+import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import { useLocation } from 'react-router';
+import P1_home from 'Project1/pages/P1_home';
+import Detail from 'Project1/pages/Detail';
+import Add from "Project1/pages/Add";
+import Login from 'Project1/pages/Login';
 import Portfolio from 'MainPage/Portfolio';
+import Resume from 'MainPage/components/Resume';
+
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
+
+import Home from "./Home";
 
 
-function App() {
-  return ( 
-      <div>
-          {/* <div>
-            <Link to = "/project1/login" className='app_project'>project 1</Link> 
-          </div>
-          <div>
-            <Link to = "/project2" className='app_project'>project 2</Link>
-          </div>
-          <div>
-            <Link to = "/project3" className='app_project'>project 3</Link>
-          </div> */}
-          <Portfolio />
-      </div>
+const App = () => {
+  const location = useLocation();
+
+  return (
+    <div className="App">
+      <TransitionGroup>
+        <CSSTransition
+          key={location.key}
+          timeout={1000}
+          classNames="fade"
+        >
+          <Routes location={location}>
+            <Route exact path="/" element={<Home />} />
+            <Route path="/Resume" element={<Resume />} />
+            <Route path="/project1" element={<P1_home />} />
+            <Route path="/project1/login" element={<Login />} />
+            <Route path="/project1/:id" element={<Detail />} />
+            <Route path="/project1/add" element={<Add />} />
+            <Route path="/project1/:id/edit" element={<Add />} />
+          </Routes>
+        </CSSTransition>
+      </TransitionGroup>
+    </div>
   );
-}
+};
 
-export default App;
+const AppWithRouter = () => (
+  <Router>
+    <App />
+  </Router>
+);
+
+export default AppWithRouter;

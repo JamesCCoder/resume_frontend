@@ -14,7 +14,15 @@
         flex-direction: row;
         justify-content: flex-start;
         align-items: flex-end;
-        
+        text-decoration: none;
+        :focus{
+            text-decoration: none;
+            outline: none;
+        }
+        :active{
+            text-decoration: none;
+            outline: none;
+        }
         .portfolio_header_left_name{
              font-family: 'Trebuchet MS', 'Arial Narrow', Arial, sans-serif;
              font-size: x-large;
@@ -45,6 +53,7 @@
              font-weight: bold;
              padding:0.5rem 0;
              border:none;
+             text-decoration: none;
              &:hover{
                 color:rgb(0,255,165);
                 box-shadow: 0 2px 0 0 rgb(0,255,165);
@@ -73,7 +82,8 @@
              }
         }
         .portfolio_header_right_resume{
-            background-color: rgb(30,29,38);
+             background-color: rgb(30,29,38);
+             text-decoration: none;
              margin: 0 1rem;
              font-family: 'Trebuchet MS', 'Arial Narrow', Arial, sans-serif;
              color: white;

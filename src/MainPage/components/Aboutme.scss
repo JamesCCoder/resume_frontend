@@ -1,0 +1,29 @@
+.potofolio_aboutme{
+    color:white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    .potofolio_aboutme_one{
+        width:20rem;
+        display: flex;
+        flex-direction: column;
+        margin:0 0 1.5rem 0;
+        .potofolio_aboutme_one_one{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+           font-family: 'Courier New', Courier, monospace;
+           margin:0.2rem 0 0.5rem 0;
+        }
+        .potofolio_aboutme_one_two{
+         
+            width:100%;
+            display: flex;
+             align-items: center;
+            justify-content: center;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            margin-right: 4rem;
+        }
+    }
+}

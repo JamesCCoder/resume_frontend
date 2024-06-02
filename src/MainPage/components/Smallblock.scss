@@ -16,14 +16,15 @@
     }
     .portfolio_smallblock_title{
        position: absolute;
-       top:2rem;
+       top:2.5rem;
        left:2rem;
+       font-size: 1.1rem;
        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-       color:rgb(0,255,165);
+       color:white;
     }
     .portfolio_smallblock_place{
         position: absolute;
-        top:6rem;
+        top:5.5rem;
         left:2rem;
         .portfolio_smallblock_place_dot{
              background-color:rgb(0,255,165);
@@ -40,7 +41,7 @@
             width:9rem;
             position:absolute;
             top:-0.4rem;
-            left:1rem;
+            left:-0.7rem;
         }
     }
 }

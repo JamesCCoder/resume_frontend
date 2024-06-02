@@ -10,9 +10,8 @@ const Portfolio = () =>{
    return(
        <div>
            <Header />
-           <Resume />
-           {/* <Introduction />
-           <Footer /> */}
+           <Introduction />
+           <Footer />
        </div>
    )
 }

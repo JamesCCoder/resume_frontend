@@ -11,11 +11,11 @@ const Footer = () =>{
         let currentNumberTwo = 1;
         let currentNumberThree = 1;
         let currentNumberFour = 1;
-        const targetNumberOne = 12;
-        const targetNumberTwo = 26;
+        const targetNumberOne = 5;
+        const targetNumberTwo = 7;
         const targetNumberThree = 8;
         const targetNumberFour = 500;
-        const duration = 1500; // Animation duration in milliseconds
+        const duration = 2000; 
         const intervalOne = duration / (targetNumberOne - currentNumberOne);
         const intervalTwo = duration / (targetNumberTwo - currentNumberTwo);
         const intervalThree = duration / (targetNumberThree - currentNumberThree);

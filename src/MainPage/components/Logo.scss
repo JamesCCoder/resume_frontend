@@ -6,6 +6,7 @@
     align-items: center;
     justify-content: center;
     margin:0 1rem 0 0;
+    position:relative;
 }
 .potfolio_logo{
     height:2.5rem;
@@ -13,4 +14,29 @@
     :hover{
         color:rgb(0,255,165);
     }
+ 
+}
+.potfolio_logo_wrapper:hover .potfolio_logo_tooltip{
+    visibility: visible;
+    opacity: 0.8;
+}
+
+.potfolio_logo_tooltip {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+    width: 100px;
+    background-color: white;
+    color: black;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    opacity: 0;
+    transition: opacity 0.3s;
 }

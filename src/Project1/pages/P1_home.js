@@ -1,11 +1,11 @@
 import React from "react";
-import "./Home.scss";
+import "./P1_home.scss";
 
 import Header from "Project1/components/Header";
 import Footer from "Project1/components/Footer";
 import List from "Project1/components/List";
 
-const Home = () =>{
+const P1_home = () =>{
     return(
         <div className="home_overall">
             <Header />
@@ -16,4 +16,4 @@ const Home = () =>{
     )
 }
 
-export default Home;
+export default P1_home;

@@ -3,8 +3,6 @@ import "./Introduction.scss";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 
-import avatar from "../../static/avator.png";
-import jpg from "../../static/image.jpg";
 import resume from "../../static/Resume_jian wu.pdf";
 
 const Introduction = () =>{

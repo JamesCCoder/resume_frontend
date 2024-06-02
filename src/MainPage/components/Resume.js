@@ -1,51 +1,68 @@
-import React from "react";
-import Logo from "./Logo";
+import React,{useState} from "react";
 import "./Resume.scss";
 import Smallblock from "./Smallblock";
 
-import { faHtml5,faCss3,faJs,faReact,faJava, faDocker, faAws, faJenkins, faFontAwesome, faBootstrap, faGithub, faMedapps } from '@fortawesome/free-brands-svg-icons';
+
+import Header from "./Header";
+
+import Experience from "./Experience";
+import Education from "./Education";
+import Aboutme from "./Aboutme";
+import Logo from "./Logo";
+import Skills from "./Skills";
 
 const Resume = () =>{
+
+  const [selectedButton, setSelectedButton] = useState(1);
+
+  const handleButtonClick = (buttonNumber) => {
+    setSelectedButton(buttonNumber);
+  };
+
+  const renderContent = () => {
+    switch (selectedButton) {
+      case 1:
+        return <Experience />;
+      case 2:
+        return <Education />;
+      case 3:
+        return <Skills />;
+      case 4:
+        return <Aboutme />;
+      default:
+        return <Experience />;
+    }
+  };
    return(
+    <>
+      <Header />
        <div className="portfolio_resume">
            <div className="portfolio_resume_left">
                <div className="portfolio_resume_left_one">Why hire me ?</div>
                <div className="portfolio_resume_left_two">Your worst sin is that</div>
                <div className="portfolio_resume_left_three">you have betrayed yourself for nothing.</div>
                <div className="portfolio_resume_left_four">
-                   <button>Experience</button>
-                   <button>Education</button>
-                   <button>Skills</button>
-                   <button>About me</button>
+                   <button onClick={() => handleButtonClick(1)}>Experience</button>
+                   <button onClick={() => handleButtonClick(2)}>Education</button>
+                   <button onClick={() => handleButtonClick(3)}>Skills</button>
+                   <button onClick={() => handleButtonClick(4)}>About me</button>
                </div>
            </div>
            <div className="portfolio_resume_right">
-               <div className="portfolio_resume_right_title">My experience</div>
+               <div className="portfolio_resume_right_title">
+                   {selectedButton == 1 && "My experience"}
+                   {selectedButton == 2 && "My education"}
+                   {selectedButton == 3 && "My skills"}
+                   {selectedButton == 4 && "About me"}
+               </div>
                <div className="portfolio_resume_right_content">
-                    {/* <Smallblock />
-                    <Smallblock />
-                    <Smallblock />
-                    <Smallblock />
-                    <Smallblock />
-                    <Smallblock />
-                    <Smallblock />
-                    <Smallblock /> */}
-                    <Logo iconName={faHtml5}/>
-                    <Logo iconName={faCss3}/>
-                    <Logo iconName={faJs}/>
-                    <Logo iconName={faReact}/>
-                    <Logo iconName={faJava}/>
-                    <Logo iconName={faDocker}/>
-                    <Logo iconName={faJenkins}/>
-                    <Logo iconName={faAws}/>
-                    <Logo iconName={faFontAwesome}/>
-                    <Logo iconName={faBootstrap}/>
-                    <Logo iconName={faGithub}/>
-                    <Logo iconName={faMedapps}/>
+                    {renderContent()}
                </div>
              
            </div>
        </div>
+       </>
+      
    )
 }
 
