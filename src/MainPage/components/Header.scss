@@ -71,6 +71,7 @@
              font-size: small;
              font-weight: bold;
              padding:0.5rem 0;
+             text-decoration: none;
              border:none;
              &:hover{
                 color:rgb(0,255,165);
@@ -101,6 +102,7 @@
              }
         }
         .portfolio_header_right_contact{
+            text-decoration: none;
             background-color: rgb(30,29,38);
             margin: 0 1rem;
             font-family: 'Trebuchet MS', 'Arial Narrow', Arial, sans-serif;

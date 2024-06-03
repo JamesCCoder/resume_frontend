@@ -8,6 +8,7 @@ import Add from "Project1/pages/Add";
 import Login from 'Project1/pages/Login';
 import Portfolio from 'MainPage/Portfolio';
 import Resume from 'MainPage/components/Resume';
+import Contact from 'MainPage/components/Contact';
 
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
@@ -28,6 +29,7 @@ const App = () => {
           <Routes location={location}>
             <Route exact path="/" element={<Home />} />
             <Route path="/Resume" element={<Resume />} />
+            <Route path="/Contact" element={<Contact />} />
             <Route path="/project1" element={<P1_home />} />
             <Route path="/project1/login" element={<Login />} />
             <Route path="/project1/:id" element={<Detail />} />
