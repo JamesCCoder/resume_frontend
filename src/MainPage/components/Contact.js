@@ -5,7 +5,6 @@ import Header from "./Header";
 
 import emailjs from 'emailjs-com';
 
-import { EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, EMAILJS_PUBLIC_KEY } from '../../emailjs.config';
 
 const Contact = () =>{
 
