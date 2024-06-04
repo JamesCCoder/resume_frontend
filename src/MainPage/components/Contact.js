@@ -25,7 +25,12 @@ const Contact = () =>{
                 message: message,
             };
 
-            emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams, EMAILJS_PUBLIC_KEY)
+            emailjs.send(
+                "service_a40ar9a", 
+                "template_28rsulm", 
+                templateParams, 
+                "9gMJST79sud6gFby3",
+            )
             .then((response) => {
                 console.log('SUCCESS!', response.status, response.text);
                 setResponseMessage('Thank you for your message!');

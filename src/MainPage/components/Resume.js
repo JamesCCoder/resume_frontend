@@ -1,6 +1,5 @@
 import React,{useState} from "react";
 import "./Resume.scss";
-import Smallblock from "./Smallblock";
 
 
 import Header from "./Header";
@@ -8,7 +7,6 @@ import Header from "./Header";
 import Experience from "./Experience";
 import Education from "./Education";
 import Aboutme from "./Aboutme";
-import Logo from "./Logo";
 import Skills from "./Skills";
 
 const Resume = () =>{

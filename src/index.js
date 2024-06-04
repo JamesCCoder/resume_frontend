@@ -4,8 +4,6 @@ import './index.scss';
 import App from './App';
 
 
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
-
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 

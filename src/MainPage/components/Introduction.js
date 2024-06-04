@@ -1,7 +1,7 @@
 import React,{useState, useEffect} from "react";
 import "./Introduction.scss";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub, faLinkedin, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faLinkedin} from '@fortawesome/free-brands-svg-icons';
 
 import resume from "../../static/Resume_jian wu.pdf";
 

@@ -3,7 +3,6 @@ import Footer from 'MainPage/components/Footer';
 import Introduction from "MainPage//components/Introduction";
 import React from "react";
 import "./Portfolio.scss";
-import Resume from "./components/Resume";
 
 
 const Portfolio = () =>{

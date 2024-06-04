@@ -6,7 +6,6 @@ import P1_home from 'Project1/pages/P1_home';
 import Detail from 'Project1/pages/Detail';
 import Add from "Project1/pages/Add";
 import Login from 'Project1/pages/Login';
-import Portfolio from 'MainPage/Portfolio';
 import Resume from 'MainPage/components/Resume';
 import Contact from 'MainPage/components/Contact';
 
