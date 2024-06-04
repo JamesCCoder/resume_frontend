@@ -48,10 +48,10 @@ const Resume = () =>{
            </div>
            <div className="portfolio_resume_right">
                <div className="portfolio_resume_right_title">
-                   {selectedButton == 1 && "My experience"}
-                   {selectedButton == 2 && "My education"}
-                   {selectedButton == 3 && "My skills"}
-                   {selectedButton == 4 && "About me"}
+                   {selectedButton === 1 && "My experience"}
+                   {selectedButton === 2 && "My education"}
+                   {selectedButton === 3 && "My skills"}
+                   {selectedButton === 4 && "About me"}
                </div>
                <div className="portfolio_resume_right_content">
                     {renderContent()}
