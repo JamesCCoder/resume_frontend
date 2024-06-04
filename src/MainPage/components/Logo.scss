@@ -7,6 +7,10 @@
     justify-content: center;
     margin:0 1rem 0 0;
     position:relative;
+    @media (max-width: 1045px){
+        height:4rem;
+        width:4rem;
+    }
 }
 .potfolio_logo{
     height:2.5rem;

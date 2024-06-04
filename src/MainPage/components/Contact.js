@@ -43,7 +43,7 @@ const Contact = () =>{
         }
     };
   return(
-      <>
+      <div className="potfolio_contact_wrap">
         <Header />
            <div className="potfolio_contact">
                <div className="potfolio_contact_message">
@@ -99,7 +99,7 @@ const Contact = () =>{
             </div>
                </div>
            </div>
-    </>
+    </div>
   )
 }
 

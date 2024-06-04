@@ -1,5 +1,5 @@
 .portfolio_footer{
-    // background-color: rgb(30,29,38);
+    background-color: rgb(30,29,38);
     height:10rem;
     display: flex;
     align-items: center;
@@ -9,12 +9,23 @@
     right: 0;
     margin-left: 18rem;
     margin-right: 18rem;
+    @media (max-width: 562px){
+         align-items: center;
+         justify-content: center;  
+         flex-direction: column; 
+         height:auto;
+         
+    }
     .portfolio_footer_first{
-
         margin:0 1rem;
         color:white;
         display: flex;
         flex-direction: row;
+        @media (max-width: 562px){
+           width:10rem;
+           justify-content:flex-start;
+           margin-left: 0;
+        }
         .portfolio_footer_first_one{
             font-size:40px;
             font-family: 'Trebuchet MS', 'Arial Narrow', Arial, sans-serif;
@@ -28,6 +39,12 @@
             align-items: center;
             justify-content: center;
             margin-left: 1rem;
+            @media (max-width: 562px){
+                margin-left: 0;
+                position: relative;
+                top:0;
+                left:2.3rem;
+        }
         }
     }
     .portfolio_footer_second{
@@ -35,8 +52,12 @@
         color:white;
         display: flex;
         flex-direction: row;
-        
-         .portfolio_footer_second_one{
+        @media (max-width: 562px){
+           width:10rem;
+           justify-content:flex-start;
+           margin-left: 0;
+        }
+        .portfolio_footer_second_one{
             font-size:40px;
             font-family: 'Trebuchet MS', 'Arial Narrow', Arial, sans-serif;
         }
@@ -44,21 +65,31 @@
             font-family: 'Arial', 'Arial Narrow', Arial, sans-serif;
             font-size: 12px;
             overflow-wrap: break-word; 
-       
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             margin-left: 1rem;
+            @media (max-width: 562px){
+                margin-left: 0;
+                position: relative;
+                top:0;
+                left:2.3rem;
+        }
         }
     }
     .portfolio_footer_third{
         margin:0 1rem;
         color:white;
-         display: flex;
+        display: flex;
         flex-direction: row;
-    
-         .portfolio_footer_third_one{
+        @media (max-width: 562px){
+           width:10rem;
+           justify-content:flex-start;
+           margin-left: 0;
+        }
+        .portfolio_footer_third_one{
+
             font-size:40px;
             font-family: 'Trebuchet MS', 'Arial Narrow', Arial, sans-serif;
         }
@@ -66,26 +97,33 @@
             font-family: 'Arial', 'Arial Narrow', Arial, sans-serif;
             font-size: 12px;
             overflow-wrap: break-word; 
-           
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             margin-left: 1rem;
+            @media (max-width: 562px){
+                margin-left: 0;
+                position: relative;
+                top:0;
+                left:2.3rem;
+        }
         }
     }
     .portfolio_footer_fourth{
-      margin:0 1rem;
+        margin:0 1rem;
         color:white;
         display: flex;
         flex-direction: row;
-        justify-content: center;
-        align-items: center;
-         .portfolio_footer_fourth_one{
+        @media (max-width: 562px){
+           width:10rem;
+           justify-content:flex-start;
+           margin-left: 0;
+           margin-bottom: 2rem;
+        }
+        .portfolio_footer_fourth_one{
             font-size:40px;
             font-family: 'Trebuchet MS', 'Arial Narrow', Arial, sans-serif;
-    
-            width:50%;
         }
         .portfolio_footer_fourth_two{
             font-family: 'Arial', 'Arial Narrow', Arial, sans-serif;
@@ -96,9 +134,12 @@
             align-items: center;
             justify-content: center;
             margin-left: 1rem;
-     
-            height:50%;
-            width:50%;
+            @media (max-width: 562px){
+                margin-left: 0;
+                position: relative;
+                top:0;
+                left:2.3rem;
+        }
         }
     }
 }

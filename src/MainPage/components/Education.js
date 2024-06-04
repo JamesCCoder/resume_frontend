@@ -5,8 +5,8 @@ import Smallblock from "./Smallblock";
 const Education = () =>{
     return (
         <>
-            <Smallblock  title={"Mathematics"} words={"Northwest Uni"}/>
-            <Smallblock  title={"MBA"} words={"Missouri state Uni"}/>
+            <Smallblock year={"2007-2011"}  title={"Mathematics"} words={"Northwest Uni"}/>
+            <Smallblock year={"2018-2020"} title={"MBA"} words={"Missouri state Uni"}/>
         </>
     )
 }

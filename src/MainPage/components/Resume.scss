@@ -1,11 +1,23 @@
+.potfolio_resume_wrap{
+     width:100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+}
 .portfolio_resume{
     width:100%;
-    height:100vh;
+    height:calc(100vh + 25rem);
     background-color: rgb(30,29,38);
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    @media (max-width: 1046px){
+        display: flex;
+        flex-direction: column;
+
+    }
     .portfolio_resume_left{
        margin-right: 3rem;
        height:100%;
@@ -14,6 +26,27 @@
        display: flex;
        flex-direction: column;
        align-items: center;
+       @media (max-width: 1046px){
+           width:50%;
+     
+        margin-left: 0;
+        margin-right: 0;
+        height:auto;
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+       }
+       @media (max-width: 885px){
+           width:60%;
+       }
+       @media (max-width: 630px){
+           width:80%;
+       }
+       @media (max-width: 525px){
+           width:90%;
+       }
        .portfolio_resume_left_one{
            color:white;
            width:100%;
@@ -22,6 +55,17 @@
            font-size: 2rem;
            display: flex;
            align-items: flex-end;
+           @media (max-width: 1046px){
+                margin-left: 0;
+                margin-right: 0;
+                height:auto;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding:1rem 0;
+                text-align: center;
+             }
        }
        .portfolio_resume_left_two{
            color:white;
@@ -31,15 +75,38 @@
            display: flex;
            align-items: flex-end;
            font-weight: lighter;
+             @media (max-width: 1046px){
+                text-align: center;
+                margin-left: 0;
+                margin-right: 0;
+                padding:0.3rem 0 ;
+                height:auto;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+             }
        }
        .portfolio_resume_left_three{
            color:white;
            width:100%;
-           height:3%;
+           height:auto;
            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
            display: flex;
            align-items: flex-end;
            font-weight: lighter;
+           @media (max-width: 1046px){
+                text-align: center;
+                margin-left: 0;
+                margin-right: 0;
+                padding:0.3rem 0 ;
+                height:auto;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+             }
+             
        }
        .portfolio_resume_left_four{
            width:100%;
@@ -68,6 +135,26 @@
        height:100%;
        margin-right: 18rem;
        width:66.66%;
+        @media (max-width: 1046px){
+           width:50%;
+            margin-left: 0;
+            margin-right: 0;
+            height:auto;
+            margin-top: 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+       }
+        @media (max-width: 885px){
+           width:60%;
+       }
+       @media (max-width: 630px){
+           width:80%;
+       }
+       @media (max-width: 525px){
+           width:90%;
+       }
        .portfolio_resume_right_title{
           display: flex;
           color:white;
@@ -84,6 +171,12 @@
            overflow: scroll;
            overflow-y:visible;
            overflow-x:hidden;
+           width:100%;
+            @media (max-width: 1046px){
+                justify-content: center;
+                align-items: flex-start;
+                height:auto;
+            }
        }
         ::-webkit-scrollbar {
             width: 6px; 

@@ -6,6 +6,17 @@
     border-radius: 10px;
     background-color: rgb(45,44,50);
     position:relative;
+    @media (max-width: 1416px){
+        width:12rem;
+        height:6.5rem;
+    }
+    @media (max-width: 720px){
+        width:100%;
+        height:6.5rem;
+        margin:1rem 0.5rem;
+        
+    }
+    
     .portfolio_smallblock_year{
        position: absolute;
        top:1rem;
@@ -13,6 +24,9 @@
        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
        color:rgb(0,255,165);
        font-size: 0.8rem;
+       @media (max-width: 1416px){
+        font-size: 0.7rem;
+    }
     }
     .portfolio_smallblock_title{
        position: absolute;
@@ -21,11 +35,18 @@
        font-size: 1.1rem;
        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
        color:white;
+       @media (max-width: 1416px){
+        font-size: 0.9rem;
+    }
     }
     .portfolio_smallblock_place{
         position: absolute;
         top:5.5rem;
         left:2rem;
+        @media (max-width: 1416px){
+        top:4.8rem;
+        left:2rem;
+    }
         .portfolio_smallblock_place_dot{
              background-color:rgb(0,255,165);
              height:0.3rem;
@@ -41,7 +62,11 @@
             width:9rem;
             position:absolute;
             top:-0.4rem;
-            left:-0.7rem;
+            left:1rem;
+            @media (max-width: 1416px){
+               font-size: 0.7rem;
+               top:-0.2rem;
+    }
         }
     }
 }

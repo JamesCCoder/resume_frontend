@@ -32,7 +32,7 @@ const Resume = () =>{
     }
   };
    return(
-    <>
+    <div className="potfolio_resume_wrap">
       <Header />
        <div className="portfolio_resume">
            <div className="portfolio_resume_left">
@@ -59,7 +59,7 @@ const Resume = () =>{
              
            </div>
        </div>
-       </>
+       </div>
       
    )
 }

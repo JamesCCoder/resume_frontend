@@ -71,7 +71,7 @@ const Footer = () =>{
        <div className="portfolio_footer">
           <div className="portfolio_footer_first">
             <div className="portfolio_footer_first_one">{year}</div>
-            <div className="portfolio_footer_first_two">Years of experience</div>
+            <div className="portfolio_footer_first_two">Years of Experience</div>
           </div>
           <div className="portfolio_footer_second">
             <div className="portfolio_footer_second_one">{project}</div>
