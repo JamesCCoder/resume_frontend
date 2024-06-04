@@ -7,7 +7,7 @@ import "./Portfolio.scss";
 
 const Portfolio = () =>{
    return(
-       <div>
+       <div className="portfolio">
            <Header />
            <Introduction />
            <Footer />
