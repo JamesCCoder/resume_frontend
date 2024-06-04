@@ -1,37 +1,61 @@
 .portfolio_introduction{
     background-color: rgb(30,29,38);
     width:100%;
-    height:calc(100vh - 15rem);
+    height:37rem;
     color:white;
-  
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    @media (max-width: 1092px) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;    
+    }
     .portfolio_introduction_left{
-      
        width:100%;
        height:100%;
        margin-left: 18rem;
        display: flex;
        flex-direction: column;
        justify-content: space-between;
-
+       @media (max-width: 1092px){
+           display: flex;
+           flex-direction: column;
+           align-items: center;
+           justify-content: center;
+           margin-left: 0;
+       }
        .portfolio_introduction_left_one{
-   
            height:70%;
            display: flex;
            align-items:flex-end;
            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+           @media (max-width: 1090px){
+                align-items:center;
+             }
        }
        .portfolio_introduction_left_two{
            margin-bottom: -2rem;
            height:50%;
            display: flex;
-           align-items: center;
+           align-items:flex-start;
            font-size: 4rem;
            font-family:'Cambria','Lucida Sans Unicode',sans-serif;
-           
+            @media (max-width: 1430px) {
+                font-size: 3.5rem; 
+                margin-bottom: -3rem;
+            }
+
+            @media (max-width: 1200px) {
+                font-size: 3rem; 
+                margin-bottom: -4rem;
+            }
+            @media (max-width: 1092px){
+                font-size: 2rem;
+                margin-bottom: 0;
+            }
        }
        .portfolio_introduction_left_three{
            font-family:'Cambria', 'Arial Narrow', Arial, sans-serif;
@@ -41,16 +65,32 @@
            font-size: 4rem;
            color: rgb(0,255,165);
            font-weight:bold;
+            @media (max-width: 1430px) {
+                font-size: 3.5rem; 
+                margin-bottom: -1rem;
+            }
+
+            @media (max-width: 1200px) {
+                font-size: 3rem; 
+                margin-bottom: -1.5rem;
+            }
+            @media (max-width: 1092px){
+                font-size: 2rem;
+                margin-bottom: 1rem;
+            }
        }
        .portfolio_introduction_left_four{
            height:20%;
-        
            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
            display: flex;
            align-items: center;
+           
         }
        .portfolio_introduction_left_five{
+           word-break: break-word;
            display: flex;
+           justify-content: flex-start;
+           align-items: flex-start;
            height:40%;
            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
            
@@ -61,11 +101,19 @@
            flex-direction: column;
            justify-content: flex-start;
            align-items: flex-start;
+            @media (max-width: 1092px){
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+            }
            .portfolio_introduction_left_six_resume{
               height:100%;    
               display: flex;
               align-items: center;
               justify-content: center;
+               @media (max-width: 1092px){
+                margin-right:2rem;
+                }
                 .portfolio_cv{
                     border:2px solid rgb(0,255,165);
                     background-color: rgb(30,29,38);
@@ -95,6 +143,11 @@
                align-items:flex-start;
                justify-content: center;
                margin-top: 1rem;
+                @media (max-width: 1092px){
+                    margin-top: 0;
+                    margin-left:2rem;
+                    align-items: center;
+                 }
                    .linkedin-link{
                        display: flex;
                        align-items: center;
@@ -140,12 +193,15 @@
        display: flex;
        align-items: center;
        justify-content: center;
+       @media (max-width: 1092px){
+           margin-right: 0;
+       }
         .circle {
-        position: relative;
-        width: 20rem;
-        height: 20rem;
-        opacity: 0;
-        transition: opacity 0.5s ease;
+            position: relative;
+            width: 20rem;
+            height: 20rem;
+            opacity: 0;
+            transition: opacity 0.5s ease;
     
         }
 
@@ -182,7 +238,23 @@
             20% 90%, 10% 100%, 0% 90%, 10% 80%, 0% 70%, 
             10% 60%, 0% 50%, 10% 40%, 0% 30%, 10% 20%, 0% 10%
         );
+        @media (max-width: 1430px) {
+            width: 80%;
+            height: 80%;
         }
+
+        @media (max-width: 1200px) {
+            width: 70%;
+            height: 70%;
+        }
+
+        @media (max-width: 1092px){
+            top: 15%;
+            left: 15%;
+            transform: translate(-50%, -50%);
+        }
+        }
+        
 
         @keyframes rotate {
         0% {
