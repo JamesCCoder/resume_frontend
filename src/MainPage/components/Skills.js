@@ -1,7 +1,7 @@
 import React from "react";
 import "./Skills.scss";
 
-import { faHtml5,faCss3,faJs,faReact,faJava, faDocker, faAws, faJenkins, faFontAwesome, faBootstrap, faGithub, faMedapps } from '@fortawesome/free-brands-svg-icons';
+import { faFigma,faHtml5,faCss3,faJs,faReact,faJava, faDocker, faAws, faJenkins, faFontAwesome, faBootstrap, faGithub, faMedapps } from '@fortawesome/free-brands-svg-icons';
 
 import Logo from "./Logo";
 
@@ -19,6 +19,7 @@ const Skills = () =>{
             <Logo iconName={faFontAwesome} iconTooltip={"Fontawesome"}/>
             <Logo iconName={faBootstrap} iconTooltip={"Bootstrap"}/>
             <Logo iconName={faGithub} iconTooltip={"Github"}/>
+            <Logo iconName={faFigma} iconTooltip={"Figma"}/>
             <Logo iconName={faMedapps}/>
         </>
     )
