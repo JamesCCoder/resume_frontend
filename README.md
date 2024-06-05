@@ -8,7 +8,7 @@ git push
 <!-- production -->
 
 npm run build
-aws s3 sync build/ s3://jamesresume3
+aws s3 sync build/ s3://jamesresumes3
 
 
 (chmod +x deploy.sh)
