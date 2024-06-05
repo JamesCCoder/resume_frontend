@@ -78,7 +78,21 @@
                 font-size: 2rem;
                 margin-bottom: 1rem;
             }
+            &::after{
+                margin-left: 0.5rem;
+                content: '|'; /* 使用竖线符号表示光标 */
+                color: white;
+                animation: blink-animation 2.5s step-end infinite;
+            }
        }
+            @keyframes blink-animation {
+                0%, 50% {
+                    opacity: 1;
+                }
+                51%, 100% {
+                    opacity: 0;
+            }
+}
        .portfolio_introduction_left_four{
            height:20%;
            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -276,4 +290,27 @@
         }
         }
     }
+}
+
+.border-cursor{
+    font-family:'Cambria', 'Arial Narrow', Arial, sans-serif;
+           height:50%;
+           display: flex;
+           align-items: center;
+           font-size: 4rem;
+           color: rgb(0,255,165);
+           font-weight:bold;
+            @media (max-width: 1430px) {
+                font-size: 3.5rem; 
+                margin-bottom: -1rem;
+            }
+
+            @media (max-width: 1200px) {
+                font-size: 3rem; 
+                margin-bottom: -1.5rem;
+            }
+            @media (max-width: 1092px){
+                font-size: 2rem;
+                margin-bottom: 1rem;
+            }
 }

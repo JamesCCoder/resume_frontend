@@ -6,43 +6,44 @@ import { faGithub, faLinkedin} from '@fortawesome/free-brands-svg-icons';
 import resume from "../../static/Resume_jian wu.pdf";
 
 const Introduction = () =>{
-    const [showBorder, setShowBorder] = useState(false);
+    const [showCircle, setShowCircle] = useState(false);
 
     const [text, setText] = useState('');
     const texts = ["James Wu", "Full Stack Engineer", "UX/UI developer"];
     const [index, setIndex] = useState(0);
     const [charIndex, setCharIndex] = useState(0);
 
-    useEffect(() => {
-        const timer = setTimeout(() => {
-        setShowBorder(true);
-        }, 1000);
-
-        return () => clearTimeout(timer);
-    }, []);
-
-      useEffect(() => {
+     useEffect(() => {
         const interval = setInterval(() => {
             if (charIndex <= texts[index].length) {
-                setText(texts[index].substring(0, charIndex));
+                const newText = texts[index].substring(0, charIndex);
+                setText(newText);
                 setCharIndex(prevCharIndex => prevCharIndex + 1);
             } else {
                 clearInterval(interval);
                 setTimeout(() => {
-                if (index === texts.length - 1) {
-                    setIndex(0);
-                } else {
-                    setIndex(prevIndex => prevIndex + 1);
-                }
-                setCharIndex(0);
-                }, 1000); 
+                    if (index === texts.length - 1) {
+                        setIndex(0);
+                    } else {
+                        setIndex(prevIndex => prevIndex + 1);
+                    }
+                    setCharIndex(0);
+                }, 1000);
             }
-            }, 100); 
+        }, 100);
 
-            return () => clearInterval(interval);
-         }, [index, charIndex, texts]);
+        return () => clearInterval(interval);
+    }, [index, charIndex, texts]);
 
+   
 
+        useEffect(() => {
+            const timer = setTimeout(() => {
+            setShowCircle(true);
+            }, 1000);
+
+            return () => clearTimeout(timer);
+        }, []);
     return(
        <div className="portfolio_introduction">
            <div className="portfolio_introduction_left">
@@ -79,7 +80,7 @@ const Introduction = () =>{
            </div>
            <div className="portfolio_introduction_right">
                 <div>
-                    <div className={`circle ${showBorder ? 'show' : ''}`}>
+                    <div className={`circle ${showCircle ? 'show' : ''}`}>
                         {/* <img src={""} alt="" className="avatar" /> */}
                         <div className="rotating-border"></div>
                     </div>
