@@ -78,12 +78,12 @@
                 font-size: 2rem;
                 margin-bottom: 1rem;
             }
-            &::after{
-                margin-left: 0.5rem;
-                content: '|'; /* 使用竖线符号表示光标 */
-                color: white;
-                animation: blink-animation 2.5s step-end infinite;
-            }
+            // &::after{
+            //     margin-left: 0.5rem;
+            //     content: '|'; /* 使用竖线符号表示光标 */
+            //     color: white;
+            //     animation: blink-animation 2.5s step-end infinite;
+            // }
        }
             @keyframes blink-animation {
                 0%, 50% {

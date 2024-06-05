@@ -8,6 +8,7 @@ import resume from "../../static/Resume_jian wu.pdf";
 const Introduction = () =>{
     const [showCircle, setShowCircle] = useState(false);
 
+    const [showBorder, setShowBorder] = useState(false);
     const [text, setText] = useState('');
     const texts = ["James Wu", "Full Stack Engineer", "UX/UI developer"];
     const [index, setIndex] = useState(0);
@@ -16,7 +17,7 @@ const Introduction = () =>{
      useEffect(() => {
         const interval = setInterval(() => {
             if (charIndex <= texts[index].length) {
-                const newText = texts[index].substring(0, charIndex);
+                const newText = showBorder ? texts[index].substring(0, charIndex) : texts[index].substring(0, charIndex);
                 setText(newText);
                 setCharIndex(prevCharIndex => prevCharIndex + 1);
             } else {
