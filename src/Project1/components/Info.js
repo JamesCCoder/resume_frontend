@@ -7,7 +7,8 @@ import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 
 const Info = () => {
-    const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
+    const apiBaseUrl = "james-resume-backend-9a3094b7738e.herokuapp.com";
+    // process.env.REACT_APP_API_BASE_URL;
     const { id } = useParams();
     const [student, setStudent] = useState(null);
     const [error, setError] = useState(null);

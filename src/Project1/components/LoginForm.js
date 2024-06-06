@@ -18,7 +18,8 @@ const LoginForm = () =>{
         }
 
        try {
-            const response = await axios.post('http://localhost:8080/api/login', { username, password });
+            // const response = await axios.post('http://localhost:8080/api/login', { username, password });
+            const response = await axios.post('http://james-resume-backend-9a3094b7738e.herokuapp.com/api/login', { username, password });
             if (response.data) {
                 navigate('/project1/');
             } else {
