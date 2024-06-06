@@ -7,7 +7,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 
 const Input = () =>{
 
-    const apiBaseUrl = "james-resume-backend-9a3094b7738e.herokuapp.com";
+    const apiBaseUrl = "http://james-resume-backend-9a3094b7738e.herokuapp.com";
     // process.env.REACT_APP_API_BASE_URL;
 
     const navigate = useNavigate();
