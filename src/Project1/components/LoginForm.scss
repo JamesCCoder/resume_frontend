@@ -1,6 +1,6 @@
 .loginform_wrapper{
     width : 100%;
-    height : calc(100% - 5rem);
+    height : 100vh;
     display: flex;
     flex-direction: column;
     align-items:center;
@@ -10,7 +10,6 @@
         flex-direction: column;
         align-items:center;
         justify-content:center;
-        margin:3rem 0 0 0;
         .input_label{
            padding:10px 5px;
         }
