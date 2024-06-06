@@ -7,7 +7,7 @@ import axios from 'axios';
 
 const List = () =>{
 
-    const apiBaseUrl = "http://james-resume-backend-9a3094b7738e.herokuapp.com"
+    const apiBaseUrl = "https://james-resume-backend-9a3094b7738e.herokuapp.com"
     
     // process.env.REACT_APP_API_BASE_URL;
    
