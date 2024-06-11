@@ -1,6 +1,6 @@
 import './App.scss';
 import React from "react";
-import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import { BrowserRouter as HashRouter, Route, Routes} from 'react-router-dom';
 import { useLocation } from 'react-router';
 import P1_home from 'Project1/pages/P1_home';
 import Detail from 'Project1/pages/Detail';
@@ -42,9 +42,9 @@ const App = () => {
 };
 
 const AppWithRouter = () => (
-  <Router>
+  <HashRouter>
     <App />
-  </Router>
+  </HashRouter>
 );
 
 export default AppWithRouter;
