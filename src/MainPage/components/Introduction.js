@@ -3,7 +3,7 @@ import "./Introduction.scss";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin} from '@fortawesome/free-brands-svg-icons';
 
-import resume from "../../static/Resume_jian wu.pdf";
+import resume from "../../static/Resume_Jian Wu.pdf";
 
 const Introduction = () =>{
     const [showCircle, setShowCircle] = useState(false);

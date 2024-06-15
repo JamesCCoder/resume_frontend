@@ -32,5 +32,15 @@
             font-size: 0.9rem;
             margin:1rem 0 0 0;
         }
+        .toggle_form{
+            margin-top: 1.5rem;
+            text-decoration:underline;
+            cursor: pointer;
+            &:hover{
+                color: red;
+            }
+        }
+
+
     }
 }

@@ -1,15 +1,17 @@
-import React,{useState} from "react";
+import React,{useState, useEffect} from "react";
 import "./LoginForm.scss";
 
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const LoginForm = () =>{
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const navigate = useNavigate()
+    const navigate = useNavigate();
     const [error, setError] = useState('');
-
+    const location = useLocation();
+    
     const handleSubmit = async (e) => {
         e.preventDefault();
         if (!username || !password) {
@@ -18,35 +20,60 @@ const LoginForm = () =>{
         }
 
        try {
-            // const response = await axios.post('http://localhost:8080/api/login', { username, password });
             const response = await axios.post('https://james-resume-backend-9a3094b7738e.herokuapp.com/api/login', { username, password });
             if (response.data) {
                 navigate('/project1/');
             } else {
-                alert('Invalid credentials');
+                setError('Username and/or password are wrong');
             }
         } catch (error) {
+            setError('Username and/or password are wrong');
             console.error('There was an error logging in!', error);
         }
     };
+
+    const handleRegisterSubmit = async (e) => {
+        e.preventDefault();
+        if (!username || !password) {
+        setError('Both username and password could not be empty');
+        return;
+    }
+
+    try {
+      const response = await axios.post('https://james-resume-backend-9a3094b7738e.herokuapp.com/api/register', { username, password });
+      if (response.status === 200) {
+        alert('Registration successful!');
+      } else {
+        alert('Registration failed!');
+      }
+    } catch (error) {
+      console.error('There was an error registering!', error);
+    }
+  };
    return (
        <div className="loginform_wrapper">
-           <form className="loginform_form" onSubmit={handleSubmit}>
+           <form className="loginform_form" onSubmit={location.pathname === "/project1/login" ? handleSubmit:handleRegisterSubmit}>
                 <div className="input_label">
                     <label htmlFor="username">Username: </label>
                     <input value={username} onChange={(e) => setUsername(e.target.value)} type="text" id="username" name="username" className="input_inputbox" autoComplete="off"></input>
                 </div>
                 <div className="input_label">
                     <label htmlFor="password" >Password: </label>
-                    <input value={password} onChange={(e) => setPassword(e.target.value)} type="text" id="password" name="password" className="input_inputbox" autoComplete="off"></input>
+                    <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" id="password" name="password" className="input_inputbox" autoComplete="off"></input>
                 </div>
                 <div className="input_submit" >
                     <button className="input_submit_button" type="submit">
-                       login
+                       {location.pathname === "/project1/login" ? 'Login' : 'Register'}
                     </button>
                 </div>
                 
                 {error && <p className="input_error">{error}</p>}
+                <div className="toggle_form">
+                    <Link to={location.pathname === "/project1/login" ? "/project1/register" : "/project1/login"}>
+                        
+                         {location.pathname === "/project1/login" ? "Don't have an account? Register" : 'Already have an account? Login'}
+                    </Link>
+                </div>
            </form>
        </div>
    )
