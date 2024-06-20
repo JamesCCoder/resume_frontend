@@ -20,7 +20,6 @@ const Info = () => {
             setLoading(false); 
         } catch (error) {
             setError('Error fetching data');
-            console.error('Error fetching data:', error);
             setLoading(false); 
         }
         };
