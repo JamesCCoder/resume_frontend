@@ -17,10 +17,11 @@
 │   ├── Home.scss
 │   ├── MainPage
 │   ├── Project1
+│   ├── api.js
 │   ├── index.js
 │   ├── index.scss
 │   └── static
 └── structure.txt
 
-5 directories, 15 files
+5 directories, 16 files
 ```
