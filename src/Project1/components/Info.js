@@ -16,7 +16,6 @@ const Info = () => {
         const fetchStudent = async () => {
         try {
             const response = await api.get(`/students/${id}`);
-            console.log(api);
             setStudent(response.data); 
             setLoading(false); 
         } catch (error) {
