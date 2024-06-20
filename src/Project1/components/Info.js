@@ -1,14 +1,12 @@
 import React,{useState, useEffect} from "react";
 import "./Info.scss";
 
-import axios from 'axios';
+import api from "api";
 
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 
 const Info = () => {
-    const apiBaseUrl = "https://james-resume-backend-9a3094b7738e.herokuapp.com";
-    // process.env.REACT_APP_API_BASE_URL;
     const { id } = useParams();
     const [student, setStudent] = useState(null);
     const [error, setError] = useState(null);
@@ -17,7 +15,8 @@ const Info = () => {
      useEffect(() => {
         const fetchStudent = async () => {
         try {
-            const response = await axios.get(`${apiBaseUrl}/students/${id}`);
+            const response = await api.get(`/students/${id}`);
+            console.log(api);
             setStudent(response.data); 
             setLoading(false); 
         } catch (error) {

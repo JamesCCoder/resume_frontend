@@ -1,7 +1,7 @@
 import React,{useState, useEffect} from "react";
 import "./LoginForm.scss";
 
-import axios from 'axios';
+import api from "api";
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
@@ -20,7 +20,7 @@ const LoginForm = () =>{
         }
 
        try {
-            const response = await axios.post('https://james-resume-backend-9a3094b7738e.herokuapp.com/api/login', { username, password });
+            const response = await api.post('/api/login', { username, password });
             if (response.data) {
                 navigate('/project1/');
             } else {
@@ -40,7 +40,7 @@ const LoginForm = () =>{
     }
 
     try {
-      const response = await axios.post('https://james-resume-backend-9a3094b7738e.herokuapp.com/api/register', { username, password });
+      const response = await api.post('/api/register', { username, password });
       if (response.status === 200) {
         alert('Registration successful!');
       } else {

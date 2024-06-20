@@ -1,14 +1,11 @@
 import React,{useState, useEffect} from "react";
 import "./Input.scss";
 
-import axios from 'axios';
+import api from "api";
 
 import { useNavigate, useParams } from 'react-router-dom';
 
 const Input = () =>{
-
-    const apiBaseUrl = "https://james-resume-backend-9a3094b7738e.herokuapp.com";
-    // process.env.REACT_APP_API_BASE_URL;
 
     const navigate = useNavigate();
     const { id } = useParams();
@@ -26,7 +23,7 @@ const Input = () =>{
             // will get data if id exists -> eidt model
             const fetchStudentData = async () => {
                 try {
-                    const response = await axios.get(`${apiBaseUrl}/students/${id}`);
+                    const response = await api.get(`/students/${id}`);
                     setFormData(response.data);
                 } catch (error) {
                     setError('Error fetching student data');
@@ -72,9 +69,9 @@ const Input = () =>{
         }
         try {
          if (id) {
-                await axios.put(`${apiBaseUrl}/students/${id}`, formData);
+                await api.put(`/students/${id}`, formData);
             } else {
-                await axios.post(`${apiBaseUrl}/students`, formData);
+                await api.post(`/students`, formData);
             }
 
                 setFormData({

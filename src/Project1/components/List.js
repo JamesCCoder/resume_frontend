@@ -3,21 +3,16 @@ import "./List.scss";
 
 import { Link } from 'react-router-dom';
 
-import axios from 'axios';
+import api from "api";
 
 const List = () =>{
-
-    const apiBaseUrl = "https://james-resume-backend-9a3094b7738e.herokuapp.com"
-    
-    // process.env.REACT_APP_API_BASE_URL;
-   
     const [students, setStudents] = useState([]);
     const [error, setError] = useState(null);
     
     useEffect(() => {
         const fetchStudents = async () => {
         try {
-            const response = await axios.get(`${apiBaseUrl}/students`);
+            const response = await api.get(`/students`);
             setStudents(response.data); 
         } catch (error) {
             setError('Error fetching data');
@@ -29,7 +24,7 @@ const List = () =>{
 
     const deleteStudent = async (id) => {
         try {
-            await axios.delete(`${apiBaseUrl}/students/${id}`);
+            await api.delete(`/students/${id}`);
                setStudents(students.filter(student => student.id !== id));
             } catch (error) {
                console.error('Error deleting data:', error);
