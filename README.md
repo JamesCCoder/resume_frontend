@@ -1,19 +1,26 @@
-<!-- test environment-->
+# Project File Structure
+```
+.
+├── Dockerfile
+├── README.md
+├── deploy.sh
+├── docker-compose.yml
+├── jsconfig.json
+├── package-lock.json
+├── package.json
+├── public
+│   └── index.html
+├── src
+│   ├── App.js
+│   ├── App.scss
+│   ├── Home.js
+│   ├── Home.scss
+│   ├── MainPage
+│   ├── Project1
+│   ├── index.js
+│   ├── index.scss
+│   └── static
+└── structure.txt
 
-git add
-git commit -m
-git push
-
-
-<!-- production environment-->
-
-npm run build
-aws s3 sync build/ s3://jamesresumes3
-
-
-(chmod +x deploy.sh)
-/deploy.sh
-
-<!-- production environment 2 -->
-
-.github/wrokflows/deploy.yml
+5 directories, 15 files
+```
