@@ -52,6 +52,7 @@
   },
   "devDependencies": {
     "@types/react-transition-group": "^4.4.10",
-    "env-cmd": "^10.1.0"
+    "env-cmd": "^10.1.0",
+    "webpack-obfuscator": "^3.5.1"
   }
 }
