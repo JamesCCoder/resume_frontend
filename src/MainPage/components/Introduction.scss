@@ -230,13 +230,15 @@
             width: 20rem;
             height: 20rem;
             opacity: 0;
+            z-index: 10;
             transition: opacity 0.5s ease;
     
         }
 
         .circle.show {
-        opacity: 1;
-           
+           opacity: 1;
+           position: relative;
+           z-index: 0;
         }
 
         .avatar {
