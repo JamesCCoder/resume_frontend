@@ -3,12 +3,25 @@
 .
 ├── Dockerfile
 ├── README.md
+├── config
+│   ├── env.js
+│   ├── getHttpsConfig.js
+│   ├── jest
+│   ├── modules.js
+│   ├── paths.js
+│   ├── webpack
+│   ├── webpack.config.js
+│   └── webpackDevServer.config.js
 ├── deploy.sh
 ├── docker-compose.yml
 ├── package-lock.json
 ├── package.json
 ├── public
 │   └── index.html
+├── scripts
+│   ├── build.js
+│   ├── start.js
+│   └── test.js
 ├── src
 │   ├── App.scss
 │   ├── App.tsx
@@ -24,5 +37,5 @@
 ├── structure.txt
 └── tsconfig.json
 
-5 directories, 17 files
+9 directories, 26 files
 ```
