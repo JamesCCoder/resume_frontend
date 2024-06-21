@@ -10,8 +10,8 @@
 ├── public
 │   └── index.html
 ├── src
-│   ├── App.js
 │   ├── App.scss
+│   ├── App.tsx
 │   ├── Home.scss
 │   ├── Home.tsx
 │   ├── MainPage
