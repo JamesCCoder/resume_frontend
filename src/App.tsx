@@ -1,6 +1,6 @@
 import './App.scss';
 import React from "react";
-import { BrowserRouter as HashRouter, Route, Routes} from 'react-router-dom';
+import { BrowserRouter as HashRouter, Route, Routes } from 'react-router-dom';
 import { useLocation } from 'react-router';
 import P1_home from 'Project1/pages/P1_home';
 import Detail from 'Project1/pages/Detail';
@@ -14,8 +14,7 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 import Home from "./Home";
 
-
-const App = () => {
+const App: React.FC = () => {
   const location = useLocation();
 
   return (
@@ -27,7 +26,7 @@ const App = () => {
           classNames="fade"
         >
           <Routes location={location}>
-            <Route exact path="/" element={<Home />} />
+            <Route path="/" element={<Home />} />
             <Route path="/Resume" element={<Resume />} />
             <Route path="/Contact" element={<Contact />} />
             <Route path="/project1" element={<P1_home />} />
@@ -43,7 +42,7 @@ const App = () => {
   );
 };
 
-const AppWithRouter = () => (
+const AppWithRouter: React.FC = () => (
   <HashRouter>
     <App />
   </HashRouter>

@@ -5,7 +5,6 @@
 ├── README.md
 ├── deploy.sh
 ├── docker-compose.yml
-├── jsconfig.json
 ├── package-lock.json
 ├── package.json
 ├── public
@@ -13,15 +12,17 @@
 ├── src
 │   ├── App.js
 │   ├── App.scss
-│   ├── Home.js
 │   ├── Home.scss
+│   ├── Home.tsx
 │   ├── MainPage
 │   ├── Project1
-│   ├── api.js
-│   ├── index.js
+│   ├── api.tsx
+│   ├── custom.d.ts
 │   ├── index.scss
+│   ├── index.tsx
 │   └── static
-└── structure.txt
+├── structure.txt
+└── tsconfig.json
 
-5 directories, 16 files
+5 directories, 17 files
 ```

@@ -51,6 +51,7 @@
     ]
   },
   "devDependencies": {
+    "@types/react-transition-group": "^4.4.10",
     "env-cmd": "^10.1.0"
   }
 }
