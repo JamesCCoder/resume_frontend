@@ -10,18 +10,23 @@ const Circle = () => {
   const [direction, setDirection] = useState('');
   const [rotateXStart, setRotateXStart] = useState('-40deg');
   const [rotateXEnd, setRotateXEnd] = useState('-40deg');
-  const [lastMousePosition, setLastMousePosition] = useState(null);
+  const [lastPosition, setLastPosition] = useState(null);
   const [lastTimestamp, setLastTimestamp] = useState(null);
 
    useEffect(() => {
-    const handleMouseMove = (event) => {
+    const handleMove = (event) => {
       const currentTimestamp = event.timeStamp;
-      const currentMousePosition = { x: event.clientX, y: event.clientY };
+      let currentPosition;
+      if (event.type.startsWith('mouse')) {
+        currentPosition = { x: event.clientX, y: event.clientY };
+      } else if (event.type.startsWith('touch')) {
+        currentPosition = { x: event.touches[0].clientX, y: event.touches[0].clientY };
+      }
 
-      if (lastMousePosition && lastTimestamp) {
+      if (lastPosition && lastTimestamp) {
         const distance = Math.sqrt(
-          Math.pow(currentMousePosition.x - lastMousePosition.x, 2) +
-          Math.pow(currentMousePosition.y - lastMousePosition.y, 2)
+          Math.pow(currentPosition.x - lastPosition.x, 2) +
+          Math.pow(currentPosition.y - lastPosition.y, 2)
         );
 
         const timeElapsed = currentTimestamp - lastTimestamp;
@@ -33,8 +38,9 @@ const Circle = () => {
         setSpeed(currentSpeed);
 
         // Determine direction
-        const deltaX = currentMousePosition.x - lastMousePosition.x;
-        const deltaY = currentMousePosition.y - lastMousePosition.y;
+        const deltaX = currentPosition.x - lastPosition.x;
+        const deltaY = currentPosition.y - lastPosition.y;
+
         if (Math.abs(deltaX) > Math.abs(deltaY)) {
           if (deltaX > 0) {
             setDirection('Right');
@@ -58,27 +64,29 @@ const Circle = () => {
         }
       }
 
-      setLastMousePosition(currentMousePosition);
+      setLastPosition(currentPosition);
       setLastTimestamp(currentTimestamp);
     };
 
     const tracker = trackerRef.current;
     if (tracker) {
-      tracker.addEventListener('mousemove', handleMouseMove);
+       tracker.addEventListener('mousemove', handleMove);
+      tracker.addEventListener('touchmove', handleMove);
     }
 
     return () => {
-      if (tracker) {
-        tracker.removeEventListener('mousemove', handleMouseMove);
+       if (tracker) {
+        tracker.removeEventListener('mousemove', handleMove);
+        tracker.removeEventListener('touchmove', handleMove);
       }
     };
-  }, [lastMousePosition, lastTimestamp]);
+  }, [lastPosition, lastTimestamp]);
 
   return (
      <div className="banner" ref={trackerRef} >
             <div className="slider" 
             style={{
-               '--quantity': 10,
+               '--quantity': 9,
                '--animation-duration': `${animationDuration}s`,
                '--animation-name': animationName,
                '--rotate-x-start': rotateXStart,
