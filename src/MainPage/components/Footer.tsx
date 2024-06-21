@@ -1,11 +1,12 @@
-import React,{useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import "./Footer.scss";
 
-const Footer = () =>{
-    const [year, setYear] = useState(0);
-    const [project, setProject] = useState(0);
-    const [technology, setTechnology] = useState(0);
-    const [code, setCode] = useState(0);
+const Footer: React.FC = () => {
+    const [year, setYear] = useState<number>(0);
+    const [project, setProject] = useState<number>(0);
+    const [technology, setTechnology] = useState<number>(0);
+    const [code, setCode] = useState<number>(0);
+
     useEffect(() => {
         let currentNumberOne = 1;
         let currentNumberTwo = 1;
@@ -22,12 +23,12 @@ const Footer = () =>{
         const intervalFour = duration / (targetNumberFour - currentNumberFour);
 
         const intervalIdOne = setInterval(() => {
-        if (currentNumberOne < targetNumberOne) {
-            currentNumberOne++;
-            setYear(currentNumberOne);
-        } else {
-            clearInterval(intervalOne);
-        }
+            if (currentNumberOne < targetNumberOne) {
+                currentNumberOne++;
+                setYear(currentNumberOne);
+            } else {
+                clearInterval(intervalIdOne);
+            }
         }, intervalOne);
 
         const intervalIdTwo = setInterval(() => {
@@ -35,7 +36,7 @@ const Footer = () =>{
                 currentNumberTwo++;
                 setProject(currentNumberTwo);
             } else {
-                clearInterval(intervalTwo);
+                clearInterval(intervalIdTwo);
             }
         }, intervalTwo);
 
@@ -44,7 +45,7 @@ const Footer = () =>{
                 currentNumberThree++;
                 setTechnology(currentNumberThree);
             } else {
-                clearInterval(intervalThree);
+                clearInterval(intervalIdThree);
             }
         }, intervalThree);
 
@@ -53,7 +54,7 @@ const Footer = () =>{
                 currentNumberFour++;
                 setCode(currentNumberFour);
             } else {
-                clearInterval(intervalFour);
+                clearInterval(intervalIdFour);
             }
         }, intervalFour);
 
@@ -65,28 +66,26 @@ const Footer = () =>{
         };
     }, []);
 
-        
-
-   return(
-       <div className="portfolio_footer">
-          <div className="portfolio_footer_first">
-            <div className="portfolio_footer_first_one">{year}</div>
-            <div className="portfolio_footer_first_two">Years of Experience</div>
-          </div>
-          <div className="portfolio_footer_second">
-            <div className="portfolio_footer_second_one">{project}</div>
-            <div className="portfolio_footer_second_two">Projects completed</div>
-          </div>
-          <div className="portfolio_footer_third">
-            <div className="portfolio_footer_third_one">{technology}</div>
-            <div className="portfolio_footer_third_two">Technologies mastered</div>
-          </div>
-          <div className="portfolio_footer_fourth">
-            <div className="portfolio_footer_fourth_one">{code}</div>
-            <div className="portfolio_footer_fourth_two">Code commits</div>
-          </div>
-       </div>
-   )
+    return (
+        <div className="portfolio_footer">
+            <div className="portfolio_footer_first">
+                <div className="portfolio_footer_first_one">{year}</div>
+                <div className="portfolio_footer_first_two">Years of Experience</div>
+            </div>
+            <div className="portfolio_footer_second">
+                <div className="portfolio_footer_second_one">{project}</div>
+                <div className="portfolio_footer_second_two">Projects completed</div>
+            </div>
+            <div className="portfolio_footer_third">
+                <div className="portfolio_footer_third_one">{technology}</div>
+                <div className="portfolio_footer_third_two">Technologies mastered</div>
+            </div>
+            <div className="portfolio_footer_fourth">
+                <div className="portfolio_footer_fourth_one">{code}</div>
+                <div className="portfolio_footer_fourth_two">Code commits</div>
+            </div>
+        </div>
+    );
 }
 
 export default Footer;

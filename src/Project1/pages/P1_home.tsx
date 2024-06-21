@@ -5,7 +5,7 @@ import Header from "Project1/components/Header";
 import Footer from "Project1/components/Footer";
 import List from "Project1/components/List";
 
-const P1_home = () =>{
+const P1_home: React.FC = () =>{
     return(
         <div className="home_overall">
             <Header />

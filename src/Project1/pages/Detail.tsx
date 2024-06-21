@@ -5,7 +5,7 @@ import Header from "Project1/components/Header";
 import Footer from "Project1/components/Footer";
 import Info from "Project1/components/Info";
 
-const Detail = () =>{
+const Detail: React.FC = () =>{
     return(
         <div className="detail_overall">
         <Header />

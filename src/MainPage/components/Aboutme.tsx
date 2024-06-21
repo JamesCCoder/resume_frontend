@@ -1,8 +1,8 @@
 import React from "react";
 import "./Aboutme.scss";
 
-const Aboutme = () =>{
-    return(
+const Aboutme: React.FC = () => {
+    return (
         <div className="potofolio_aboutme">
             <div className="potofolio_aboutme_one">
                 <div className="potofolio_aboutme_one_one">Name</div>
@@ -21,7 +21,7 @@ const Aboutme = () =>{
                 <div className="potofolio_aboutme_one_two">English, Chinese</div>
             </div>
         </div>
-    )
+    );
 }
 
 export default Aboutme;

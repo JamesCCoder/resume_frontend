@@ -1,41 +1,47 @@
-import React,{useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import "./List.scss";
-
 import { Link } from 'react-router-dom';
-
 import api from "api";
 
-const List = () =>{
-    const [students, setStudents] = useState([]);
-    const [error, setError] = useState(null);
-    
-    useEffect(() => {
-        const fetchStudents = async () => {
-        try {
-            const response = await api.get(`/students`);
-            setStudents(response.data); 
-        } catch (error) {
-            setError('Error fetching data');
-            console.error('Error fetching data:', error);
-        }
-        };
-        fetchStudents();
+interface Student {
+  id: string;
+  name: string;
+  sex: string;
+  email: string;
+}
+
+const List: React.FC = () => {
+  const [students, setStudents] = useState<Student[]>([]);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const fetchStudents = async () => {
+      try {
+        const response = await api.get(`/students`);
+        setStudents(response.data);
+      } catch (error) {
+        setError('Error fetching data');
+        console.error('Error fetching data:', error);
+      }
+    };
+    fetchStudents();
   }, []);
 
-    const deleteStudent = async (id) => {
-        try {
-            await api.delete(`/students/${id}`);
-               setStudents(students.filter(student => student.id !== id));
-            } catch (error) {
-               console.error('Error deleting data:', error);
-               setError('Error deleting data');
-        }
-    };
+  const deleteStudent = async (id: string) => {
+    try {
+      await api.delete(`/students/${id}`);
+      setStudents(students.filter(student => student.id !== id));
+    } catch (error) {
+      console.error('Error deleting data:', error);
+      setError('Error deleting data');
+    }
+  };
 
   if (error) {
     return <div>{error}</div>;
   }
-   return (
+
+  return (
     <>
       {students.length === 0 ? (
         <p>No students found</p>

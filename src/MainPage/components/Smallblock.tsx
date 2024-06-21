@@ -1,8 +1,14 @@
 import React from "react";
 import "./Smallblock.scss";
 
-const Smallblock = ({year, title, words}) =>{
-    return(
+interface SmallblockProps {
+    year: string;
+    title: string;
+    words: string;
+}
+
+const Smallblock: React.FC<SmallblockProps> = ({ year, title, words }) => {
+    return (
         <div className="portfolio_smallblock">
             <div className="portfolio_smallblock_year">{year}</div>
             <div className="portfolio_smallblock_title">{title}</div>
@@ -11,7 +17,7 @@ const Smallblock = ({year, title, words}) =>{
                 <div className="portfolio_smallblock_place_words">{words}</div>
             </div>
         </div>
-    )
+    );
 }
 
 export default Smallblock;

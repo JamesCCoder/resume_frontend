@@ -5,7 +5,7 @@ import Input from "Project1/components/Input";
 import Header from "Project1/components/Header";
 import Footer from "Project1/components/Footer";
 
-const Add = () =>{
+const Add: React.FC = () =>{
    return (
        <div className="add_overall">
            <Header />

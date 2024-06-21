@@ -1,20 +1,16 @@
-import React,{useState} from "react";
+import React, { useState, FormEvent } from "react";
 import "./Contact.scss";
-
 import Header from "./Header";
-
 import emailjs from 'emailjs-com';
 
+const Contact: React.FC = () => {
+    const [firstname, setFirstname] = useState<string>('');
+    const [lastname, setLastname] = useState<string>('');
+    const [email, setEmail] = useState<string>('');
+    const [message, setMessage] = useState<string>('');
+    const [responseMessage, setResponseMessage] = useState<string>('');
 
-const Contact = () =>{
-
-    const [firstname, setFirstname] = useState('');
-    const [lastname, setLastname] = useState('');
-    const [email, setEmail] = useState('');
-    const [message, setMessage] = useState('');
-    const [responseMessage, setResponseMessage] = useState('');
-
-      const handleSubmit = (event) => {
+    const handleSubmit = (event: FormEvent) => {
         event.preventDefault();
 
         if (firstname && lastname && email && message) {
@@ -29,7 +25,7 @@ const Contact = () =>{
                 "service_a40ar9a", 
                 "template_28rsulm", 
                 templateParams, 
-                "9gMJST79sud6gFby3",
+                "9gMJST79sud6gFby3"
             )
             .then((response) => {
                 console.log('SUCCESS!', response.status, response.text);
@@ -42,11 +38,12 @@ const Contact = () =>{
             setResponseMessage('Please fill in all fields.');
         }
     };
-  return(
-      <div className="potfolio_contact_wrap">
-        <Header />
-           <div className="potfolio_contact">
-               <div className="potfolio_contact_message">
+
+    return (
+        <div className="potfolio_contact_wrap">
+            <Header />
+            <div className="potfolio_contact">
+                <div className="potfolio_contact_message">
                     <div className="potfolio_contact_message_heading">Let's work together</div>
                     <form className="potfolio_contact_message_form" onSubmit={handleSubmit}>
                         <input
@@ -59,7 +56,6 @@ const Contact = () =>{
                             required
                         />
 
-               
                         <input
                             type="text"
                             id="lastname"
@@ -70,7 +66,6 @@ const Contact = () =>{
                             required
                         />
 
-                     
                         <input
                             type="email"
                             id="email"
@@ -81,11 +76,10 @@ const Contact = () =>{
                             required
                         />
 
-                        
                         <textarea
                             id="message"
                             name="message"
-                            rows="5"
+                            rows={5}
                             value={message}
                             onChange={(e) => setMessage(e.target.value)}
                             placeholder="Type your message here"
@@ -94,13 +88,13 @@ const Contact = () =>{
 
                         <button className="potfolio_contact_message_button" type="submit">Submit</button>
                     </form>
-                 <div id="response-message" style={{ color: responseMessage.includes('Thank') ? 'green' : 'red' }}>
-                {responseMessage}
+                    <div id="response-message" style={{ color: responseMessage.includes('Thank') ? 'green' : 'red' }}>
+                        {responseMessage}
+                    </div>
+                </div>
             </div>
-               </div>
-           </div>
-    </div>
-  )
+        </div>
+    );
 }
 
 export default Contact;

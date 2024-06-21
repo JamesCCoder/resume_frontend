@@ -2,7 +2,7 @@ import React from "react";
 import "./Experience.scss";
 import Smallblock from "./Smallblock";
 
-const Experience = () =>{
+const Experience: React.FC = () =>{
     return(
         <>
             <Smallblock year={"2022-2024"} title={"Software Engineer III"} words={"JP Morgan Chase"}/>
