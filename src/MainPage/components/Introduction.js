@@ -3,6 +3,8 @@ import "./Introduction.scss";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin} from '@fortawesome/free-brands-svg-icons';
 
+import Circle from "./Circle";
+
 import resume from "../../static/Resume_Jian Wu.pdf";
 
 const Introduction = () =>{
@@ -83,7 +85,8 @@ const Introduction = () =>{
                 <div>
                     <div className={`circle ${showCircle ? 'show' : ''}`}>
                         {/* <img src={""} alt="" className="avatar" /> */}
-                        <div className="rotating-border"></div>
+                        {/* <div className="rotating-border"></div> */}
+                        <Circle />
                     </div>
                     
                 </div>
