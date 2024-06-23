@@ -6,6 +6,8 @@ import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import Circle from "./Circle";
 import resume from "../../static/Resume_Jian Wu.pdf";
 
+import { buttonClickAnalytics } from '../../utils/analytics';
+
 const Introduction: React.FC = () => {
     const [showCircle, setShowCircle] = useState<boolean>(false);
     const [text, setText] = useState<string>('');
@@ -43,6 +45,19 @@ const Introduction: React.FC = () => {
         return () => clearTimeout(timer);
     }, []);
 
+    const buttonClick = async (e: any) => {
+        const buttonId = e.currentTarget.getAttribute('data-id');
+        const buttonName = e.currentTarget.getAttribute('data-name');
+
+        if (buttonId && buttonName) {
+            await buttonClickAnalytics(buttonId, buttonName);
+        }
+
+        if (e.currentTarget && e.currentTarget.onclick) {
+            e.currentTarget.onclick(e);
+        }
+    };
+
     return (
         <div className="portfolio_introduction">
             <div className="portfolio_introduction_left">
@@ -53,8 +68,13 @@ const Introduction: React.FC = () => {
                 <div className="portfolio_introduction_left_five">I am proficient in various programming languages and technologies.</div>
                 <div className="portfolio_introduction_left_six">
                     <div className="portfolio_introduction_left_six_resume">
-                        <a href={resume} download="My_Resume.pdf" className="portfolio_cv">
-                            Download Resume
+                        <a href={resume} 
+                           download="My_Resume.pdf" 
+                           className="portfolio_cv"
+                           data-id="10"
+                           data-name="download"
+                           onClick={buttonClick}>
+                        Download Resume
                         </a>
                     </div>
                     <div className="portfolio_introduction_left_six_two">
@@ -63,6 +83,9 @@ const Introduction: React.FC = () => {
                             href="https://www.linkedin.com/in/1410042a9"
                             target="_blank"
                             rel="noopener noreferrer"
+                            data-id="11"
+                            data-name="linkedin"
+                            onClick={buttonClick}
                         >
                             <FontAwesomeIcon className="portfolio_linkedinicon" icon={faLinkedin} size="2x" />
                         </a>
@@ -71,6 +94,9 @@ const Introduction: React.FC = () => {
                             href="https://github.com/JamesCCoder"
                             target="_blank"
                             rel="noopener noreferrer"
+                            data-id="12"
+                            data-name="github"
+                            onClick={buttonClick}
                         >
                             <FontAwesomeIcon className="portfolio_giticon" icon={faGithub} size="2x" />
                         </a>

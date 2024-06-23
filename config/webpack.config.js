@@ -294,10 +294,13 @@ module.exports = function (webpackEnv) {
       ],
     },
     resolve: {
-      // This allows you to set a fallback for where webpack should look for modules.
-      // We placed these paths second because we want `node_modules` to "win"
-      // if there are any conflicts. This matches Node resolution mechanism.
-      // https://github.com/facebook/create-react-app/issues/253
+      fallback: {
+        "zlib": require.resolve("browserify-zlib"),
+        "stream": require.resolve("stream-browserify"),
+        "util": require.resolve("util/"),
+        "buffer": require.resolve("buffer/"),
+        "crypto": require.resolve("crypto-browserify")
+      },
       modules: ['node_modules', paths.appNodeModules].concat(
         modules.additionalModulePaths || []
       ),

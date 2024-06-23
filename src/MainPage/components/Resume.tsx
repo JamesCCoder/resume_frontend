@@ -7,6 +7,8 @@ import Education from "./Education";
 import Aboutme from "./Aboutme";
 import Skills from "./Skills";
 
+import { buttonClickAnalytics } from '../../utils/analytics';
+
 const Resume: React.FC = () => {
     const [selectedButton, setSelectedButton] = useState<number>(1);
 
@@ -29,6 +31,19 @@ const Resume: React.FC = () => {
         }
     };
 
+       const buttonClick = async (e: any) => {
+        const buttonId = e.currentTarget.getAttribute('data-id');
+        const buttonName = e.currentTarget.getAttribute('data-name');
+
+        if (buttonId && buttonName) {
+            await buttonClickAnalytics(buttonId, buttonName);
+        }
+
+        if (e.currentTarget && e.currentTarget.onclick) {
+            e.currentTarget.onclick(e);
+        }
+    };
+
     return (
         <div className="potfolio_resume_wrap">
             <Header />
@@ -38,10 +53,22 @@ const Resume: React.FC = () => {
                     <div className="portfolio_resume_left_two">Your worst sin is that</div>
                     <div className="portfolio_resume_left_three">you have betrayed yourself for nothing.</div>
                     <div className="portfolio_resume_left_four">
-                        <button onClick={() => handleButtonClick(1)}>Experience</button>
-                        <button onClick={() => handleButtonClick(2)}>Education</button>
-                        <button onClick={() => handleButtonClick(3)}>Skills</button>
-                        <button onClick={() => handleButtonClick(4)}>About me</button>
+                        <button 
+                            data-id="13"
+                            data-name="experience"
+                            onClick={(e) => {handleButtonClick(1); buttonClick(e)}}>Experience</button>
+                        <button
+                            data-id="14"
+                            data-name="education"
+                            onClick={(e) => {handleButtonClick(2); buttonClick(e)}}>Education</button>
+                        <button
+                            data-id="15"
+                            data-name="skills"
+                            onClick={(e) => {handleButtonClick(3); buttonClick(e)}}>Skills</button>
+                        <button
+                            data-id="16"
+                            data-name="aboutme"
+                            onClick={(e) => {handleButtonClick(4); buttonClick(e)}}>About me</button>
                     </div>
                 </div>
                 <div className="portfolio_resume_right">
