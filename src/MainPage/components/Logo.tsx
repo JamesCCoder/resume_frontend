@@ -9,10 +9,10 @@ interface LogoProps {
     iconTooltip?: string;
 }
 
-const Logo: React.FC<LogoProps> = ({ iconName, iconTitle = "more", iconTooltip = "more" }) => {
+const Logo: React.FC<LogoProps> = ({ iconName, iconTitle = "default title", iconTooltip = "default tooltip" }) => {
     return (
         <div className="potfolio_logo_wrapper">
-            <FontAwesomeIcon icon={iconName} className="potfolio_logo" title={iconTitle} />
+            <FontAwesomeIcon icon={iconName} className="potfolio_logo" title={iconTitle} aria-label={iconTooltip}/>
             <div className="potfolio_logo_tooltip">{iconTooltip}</div>
         </div>
     );
