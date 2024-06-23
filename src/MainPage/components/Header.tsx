@@ -76,7 +76,8 @@ const Header: React.FC = () => {
                     data-name="pc_hiremeButton"
                     onClick={buttonClick}>Hire me</Link>
             </div>
-            <div className="portfolio_header_right_hamburger" onClick={toggleMenu}>
+            {/* role is for unit test */}
+            <div className="portfolio_header_right_hamburger" role="button" aria-label="hamburger-menu" onClick={toggleMenu}>
                 <div className="hamburger_one"></div>
                 <div className="hamburger_two"></div>
                 <div className="hamburger_three"></div>

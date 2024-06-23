@@ -9,14 +9,13 @@
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.3",
     "@svgr/webpack": "^5.5.0",
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "@types/node": "^20.14.7",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
+    "ajv": "^8.16.0",
     "axios": "^1.7.0",
-    "babel-jest": "^27.4.2",
+    "babel-jest": "^29.7.0",
     "babel-loader": "^8.2.3",
     "babel-plugin-named-asset-import": "^0.3.8",
     "babel-preset-react-app": "^10.0.1",
@@ -38,8 +37,8 @@
     "file-loader": "^6.2.0",
     "fs-extra": "^10.0.0",
     "html-webpack-plugin": "^5.5.0",
-    "identity-obj-proxy": "^3.0.0",
-    "jest": "^27.4.3",
+    "javascript-obfuscator": "^4.1.1",
+    "jest": "^28.1.3",
     "jest-resolve": "^27.4.2",
     "jest-watch-typeahead": "^1.0.0",
     "kafkajs": "^2.2.4",
@@ -67,6 +66,7 @@
     "style-loader": "^3.3.1",
     "tailwindcss": "^3.0.2",
     "terser-webpack-plugin": "^5.2.5",
+    "ts-jest": "^28.0.0",
     "typescript": "4.9.5",
     "util": "^0.12.5",
     "web-vitals": "^2.1.4",
@@ -81,7 +81,7 @@
     "build": "node scripts/build.js",
     "start:test": "env-cmd -f .env.test node scripts/start.js",
     "start:prod": "env-cmd -f .env.prod node scripts/start.js",
-    "test": "node scripts/test.js"
+    "test": "jest --coverage"
   },
   "eslintConfig": {
     "extends": [
@@ -102,60 +102,16 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.0.0",
+    "@testing-library/react": "^13.0.0",
+    "@types/jest": "^29.5.12",
     "@types/react-transition-group": "^4.4.10",
+    "@types/testing-library__react": "^10.2.0",
     "env-cmd": "^10.1.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest-css-modules": "^2.1.0",
+    "jest-environment-jsdom": "^28.0.0",
     "webpack-obfuscator": "^3.5.1"
-  },
-  "jest": {
-    "roots": [
-      "<rootDir>/src"
-    ],
-    "collectCoverageFrom": [
-      "src/**/*.{js,jsx,ts,tsx}",
-      "!src/**/*.d.ts"
-    ],
-    "setupFiles": [
-      "react-app-polyfill/jsdom"
-    ],
-    "setupFilesAfterEnv": [],
-    "testMatch": [
-      "<rootDir>/src/**/__tests__/**/*.{js,jsx,ts,tsx}",
-      "<rootDir>/src/**/*.{spec,test}.{js,jsx,ts,tsx}"
-    ],
-    "testEnvironment": "jsdom",
-    "transform": {
-      "^.+\\.(js|jsx|mjs|cjs|ts|tsx)$": "<rootDir>/config/jest/babelTransform.js",
-      "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
-      "^(?!.*\\.(js|jsx|mjs|cjs|ts|tsx|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
-    },
-    "transformIgnorePatterns": [
-      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs|cjs|ts|tsx)$",
-      "^.+\\.module\\.(css|sass|scss)$"
-    ],
-    "modulePaths": [
-      "/Users/jameswu/Desktop/frontend/src"
-    ],
-    "moduleNameMapper": {
-      "^react-native$": "react-native-web",
-      "^.+\\.module\\.(css|sass|scss)$": "identity-obj-proxy"
-    },
-    "moduleFileExtensions": [
-      "web.js",
-      "js",
-      "web.ts",
-      "ts",
-      "web.tsx",
-      "tsx",
-      "json",
-      "web.jsx",
-      "jsx",
-      "node"
-    ],
-    "watchPlugins": [
-      "jest-watch-typeahead/filename",
-      "jest-watch-typeahead/testname"
-    ],
-    "resetMocks": true
   },
   "babel": {
     "presets": [

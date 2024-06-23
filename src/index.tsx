@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.scss';
-import App from './App';
+import AppWithRouter from './AppWithRouter';
 
 const rootElement = document.getElementById('root');
 
@@ -10,7 +10,7 @@ if (rootElement) {
 
   root.render(
     <React.StrictMode>
-      <App />
+      <AppWithRouter />
     </React.StrictMode>
   );
 } else {
