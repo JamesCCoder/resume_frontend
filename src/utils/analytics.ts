@@ -14,6 +14,7 @@ interface ClickEvent {
   buttonName: string;
   timestamp: string;
   ipAddress: string;
+  sourceUrl: string; // Add sourceUrl to the interface
 }
 
 const buttonClickAnalytics = async (buttonId: string, buttonName: string): Promise<void> => {
@@ -23,8 +24,9 @@ const buttonClickAnalytics = async (buttonId: string, buttonName: string): Promi
     buttonName,
     timestamp: new Date().toISOString(),
     ipAddress,
+    sourceUrl: window.location.origin, // Get the current page URL
   };
-
+  console.log(event);
   try {
     await fetch('http://localhost:8000/api/logClickEvent', {
       method: 'POST',
