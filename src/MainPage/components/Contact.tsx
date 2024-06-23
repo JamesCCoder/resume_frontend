@@ -4,6 +4,7 @@ import Header from "./Header";
 import emailjs from 'emailjs-com';
 
 const Contact: React.FC = () => {
+    const [successSend, setSuccessSend] = useState<boolean>(false);
     const [firstname, setFirstname] = useState<string>('');
     const [lastname, setLastname] = useState<string>('');
     const [email, setEmail] = useState<string>('');
@@ -30,70 +31,85 @@ const Contact: React.FC = () => {
             .then((response) => {
                 console.log('SUCCESS!', response.status, response.text);
                 setResponseMessage('Thank you for your message!');
+                setSuccessSend(true);
             }, (err) => {
                 console.error('FAILED...', err);
                 setResponseMessage('Failed to send the message. Please try again later.');
+                setSuccessSend(false);
             });
         } else {
             setResponseMessage('Please fill in all fields.');
+            setSuccessSend(false);
         }
     };
 
     return (
-        <div className="potfolio_contact_wrap">
-            <Header />
-            <div className="potfolio_contact">
+        successSend ? (
+           <div className="potfolio_contact_wrap">
+               <Header />
+                <div className="potfolio_contact">
                 <div className="potfolio_contact_message">
-                    <div className="potfolio_contact_message_heading">Let's work together</div>
-                    <form className="potfolio_contact_message_form" onSubmit={handleSubmit}>
-                        <input
-                            type="text"
-                            id="firstname"
-                            name="firstname"
-                            placeholder="Your Firstname"
-                            value={firstname}
-                            onChange={(e) => setFirstname(e.target.value)}
-                            required
-                        />
+                    <div className="potfolio_contact_message_heading">Thanks for the message!</div>
+                    <div className="potfolio_contact_message_content">I will contact you soon!</div>
+                </div>
+               </div>
+           </div>
+            ) : (
+            <div className="potfolio_contact_wrap">
+                <Header />
+                <div className="potfolio_contact">
+                    <div className="potfolio_contact_message">
+                        <div className="potfolio_contact_message_heading">Let's work together</div>
+                        <form className="potfolio_contact_message_form" onSubmit={handleSubmit}>
+                            <input
+                                type="text"
+                                id="firstname"
+                                name="firstname"
+                                placeholder="Your Firstname"
+                                value={firstname}
+                                onChange={(e) => setFirstname(e.target.value)}
+                                required
+                            />
 
-                        <input
-                            type="text"
-                            id="lastname"
-                            name="lastname"
-                            placeholder="Your Lastname"
-                            value={lastname}
-                            onChange={(e) => setLastname(e.target.value)}
-                            required
-                        />
+                            <input
+                                type="text"
+                                id="lastname"
+                                name="lastname"
+                                placeholder="Your Lastname"
+                                value={lastname}
+                                onChange={(e) => setLastname(e.target.value)}
+                                required
+                            />
 
-                        <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            value={email}
-                            placeholder="Your Email"
-                            onChange={(e) => setEmail(e.target.value)}
-                            required
-                        />
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                value={email}
+                                placeholder="Your Email"
+                                onChange={(e) => setEmail(e.target.value)}
+                                required
+                            />
 
-                        <textarea
-                            id="message"
-                            name="message"
-                            rows={5}
-                            value={message}
-                            onChange={(e) => setMessage(e.target.value)}
-                            placeholder="Type your message here"
-                            required
-                        ></textarea>
+                            <textarea
+                                id="message"
+                                name="message"
+                                rows={5}
+                                value={message}
+                                onChange={(e) => setMessage(e.target.value)}
+                                placeholder="Type your message here"
+                                required
+                            ></textarea>
 
-                        <button className="potfolio_contact_message_button" type="submit">Submit</button>
-                    </form>
-                    <div id="response-message" style={{ color: responseMessage.includes('Thank') ? 'green' : 'red' }}>
-                        {responseMessage}
+                            <button className="potfolio_contact_message_button" type="submit">Submit</button>
+                        </form>
+                        <div id="response-message" style={{ color: responseMessage.includes('Thank') ? 'green' : 'red' }}>
+                            {responseMessage}
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        )
     );
 }
 
