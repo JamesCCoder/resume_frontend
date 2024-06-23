@@ -14,6 +14,8 @@
 │   └── webpackDevServer.config.js
 ├── deploy.sh
 ├── docker-compose.yml
+├── jest.config.js
+├── jest.fileMock.js
 ├── package-lock.json
 ├── package.json
 ├── public
@@ -25,6 +27,7 @@
 ├── src
 │   ├── App.scss
 │   ├── App.tsx
+│   ├── AppWithRouter.tsx
 │   ├── Home.scss
 │   ├── Home.tsx
 │   ├── MainPage
@@ -33,10 +36,11 @@
 │   ├── custom.d.ts
 │   ├── index.scss
 │   ├── index.tsx
+│   ├── setupTests.ts
 │   ├── static
 │   └── utils
 ├── structure.txt
 └── tsconfig.json
 
-10 directories, 26 files
+10 directories, 30 files
 ```
