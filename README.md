@@ -27,8 +27,10 @@
 ├── src
 │   ├── App.scss
 │   ├── App.tsx
+│   ├── AppWithRouter.test.tsx
 │   ├── AppWithRouter.tsx
 │   ├── Home.scss
+│   ├── Home.test.tsx
 │   ├── Home.tsx
 │   ├── MainPage
 │   ├── Project1
@@ -42,5 +44,5 @@
 ├── structure.txt
 └── tsconfig.json
 
-10 directories, 30 files
+10 directories, 32 files
 ```
