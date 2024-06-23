@@ -33,9 +33,10 @@
 │   ├── custom.d.ts
 │   ├── index.scss
 │   ├── index.tsx
-│   └── static
+│   ├── static
+│   └── utils
 ├── structure.txt
 └── tsconfig.json
 
-9 directories, 26 files
+10 directories, 26 files
 ```
