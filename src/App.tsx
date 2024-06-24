@@ -1,5 +1,5 @@
 import './App.scss';
-import React from "react";
+import React,{useState} from "react";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { useLocation } from 'react-router';
 import P1_home from 'Project1/pages/P1_home';
@@ -9,6 +9,8 @@ import Login from 'Project1/pages/Login';
 import Resume from 'MainPage/components/Resume';
 import Contact from 'MainPage/components/Contact';
 import Register from "Project1/pages/Register";
+import IntroVideo from 'MainPage/components/IntroVideo';
+
 
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
@@ -16,9 +18,14 @@ import Home from "./Home";
 
 const App: React.FC = () => {
   const location = useLocation();
-
+  const [showHomePage, setShowHomePage] = useState(false);
+  const handleVideoEnd = () => {
+    setShowHomePage(true);
+  };
   return (
     <div className="App">
+      {!showHomePage && <IntroVideo onEnd={handleVideoEnd} />}
+      {showHomePage && (
       <TransitionGroup>
         <CSSTransition
           key={location.key}
@@ -38,6 +45,7 @@ const App: React.FC = () => {
           </Routes>
         </CSSTransition>
       </TransitionGroup>
+      )}
     </div>
   );
 };
