@@ -16,6 +16,7 @@
 ├── docker-compose.yml
 ├── jest.config.js
 ├── jest.fileMock.js
+├── note.txt
 ├── package-lock.json
 ├── package.json
 ├── public
@@ -44,5 +45,5 @@
 ├── structure.txt
 └── tsconfig.json
 
-10 directories, 32 files
+10 directories, 33 files
 ```
