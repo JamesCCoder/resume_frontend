@@ -31,7 +31,7 @@ const IntroVideo: React.FC<IntroVideoProps> = ({ onEnd }) => {
 
   return (
     <div className={`intro-container ${isVideoEnded ? 'fade-to-black' : ''}`}>
-      <video ref={videoRef} autoPlay muted>
+      <video ref={videoRef} autoPlay muted playsInline>
         <source src={videoSrc} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
