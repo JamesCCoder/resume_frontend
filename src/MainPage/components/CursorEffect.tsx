@@ -13,15 +13,15 @@ const CursorEffect: React.FC = () => {
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    const particles: { x: number, y: number, alpha: number }[] = [];
+    const particles: { x: number, y: number, alpha: number, size: number }[] = [];
 
     const resizeCanvas = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
     };
 
-    const createParticle = (x: number, y: number) => {
-      particles.push({ x, y, alpha: 1 });
+    const createParticle = (x: number, y: number, size = 5) => {
+      particles.push({ x, y, alpha: 1, size });
       if (particles.length > trailLength) {
         particles.shift();
       }
@@ -36,12 +36,16 @@ const CursorEffect: React.FC = () => {
           particles.splice(index, 1);
         } else {
           ctx.strokeStyle = `rgba(0, 255, 165, ${particle.alpha})`;
+          ctx.fillStyle = `rgba(0, 255, 165, ${particle.alpha})`;
           if (index > 0) {
             ctx.beginPath();
             ctx.moveTo(particles[index - 1].x, particles[index - 1].y);
             ctx.lineTo(particle.x, particle.y);
             ctx.stroke();
           }
+          ctx.beginPath();
+          ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+          ctx.fill();
         }
       });
     };
@@ -60,9 +64,24 @@ const CursorEffect: React.FC = () => {
       createParticle(touch.clientX, touch.clientY);
     };
 
+    const handleClick = (event: MouseEvent) => {
+      for (let i = 0; i < 10; i++) {
+        createParticle(event.clientX, event.clientY, Math.random() * 5 + 2);
+      }
+    };
+
+    const handleTouchEnd = (event: TouchEvent) => {
+      const touch = event.changedTouches[0];
+      for (let i = 0; i < 10; i++) {
+        createParticle(touch.clientX, touch.clientY, Math.random() * 5 + 2);
+      }
+    };
+
     window.addEventListener('resize', resizeCanvas);
     window.addEventListener('mousemove', handleMouseMove);
     window.addEventListener('touchmove', handleTouchMove);
+    window.addEventListener('click', handleClick);
+    window.addEventListener('touchend', handleTouchEnd);
 
     resizeCanvas();
     animate();
@@ -71,6 +90,8 @@ const CursorEffect: React.FC = () => {
       window.removeEventListener('resize', resizeCanvas);
       window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('touchmove', handleTouchMove);
+      window.removeEventListener('click', handleClick);
+      window.removeEventListener('touchend', handleTouchEnd);
     };
   }, []);
 
