@@ -39,9 +39,12 @@ const App: React.FC = () => {
             <Route path="/project1" element={<P1_home />} />
             <Route path="/project1/login" element={<Login />} />
             <Route path="/project1/register" element={<Register />} />
-            <Route path="/project1/:id" element={<Detail />} />
-            <Route path="/project1/add" element={<Add />} />
-            <Route path="/project1/:id/edit" element={<Add />} />
+            <Route path="/project1/students/:id" element={<Detail />} />
+            <Route path="/project1/students/add" element={<Add />} />
+            <Route path="/project1/students/:id/edit" element={<Add />} />
+            <Route path="/project1/professors/:id" element={<Detail />} />
+            <Route path="/project1/professors/add" element={<Add />} />
+            <Route path="/project1/professors/:id/edit" element={<Add />} />
           </Routes>
         </CSSTransition>
       </TransitionGroup>

@@ -27,16 +27,23 @@ const buttonClickAnalytics = async (buttonId: string, buttonName: string): Promi
     sourceUrl: window.location.origin, // Get the current page URL
   };
   console.log(event);
-  try {
-    await fetch('http://localhost:8000/api/logClickEvent', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(event),
-    });
-  } catch (error) {
-    console.error('Error sending click event to backend:', error);
+
+  const urls = [
+            'http://localhost:8000/api/logClickEvent',
+            'http://localhost:8001/api/logClickEvent',
+        ];
+  for (const url of urls) {
+    try {
+      await fetch(url, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(event),
+      });
+    } catch (error) {
+      console.error('Error sending click event to backend:', error);
+    }
   }
 };
 

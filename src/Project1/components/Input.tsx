@@ -17,29 +17,39 @@ const Input: React.FC = () => {
     sex: '',
     email: ''
   });
+  const [type, setType] = useState<'student' | 'professor'>('student');
   const [error, setError] = useState<string | null>(null);
   const [validationError, setValidationError] = useState<string>('');
 
   useEffect(() => {
     if (id) {
-      const fetchStudentData = async () => {
+      const fetchData = async () => {
         try {
-          const response = await api.get(`/students/${id}`);
+          const response = await api.get(`/${type}s/${id}`);
           setFormData(response.data);
         } catch (error) {
-          setError('Error fetching student data');
-          console.error('Error fetching student data:', error);
+          setError(`Error fetching ${type} data`);
+          console.error(`Error fetching ${type} data:`, error);
         }
       };
-      fetchStudentData();
+      fetchData();
     }
-  }, [id]);
+  }, [id, type]);
+
+  useEffect(() =>{
+      const path = window.location.pathname;
+      setType(path.includes('/students/') ? 'student' : 'professor');
+  },[])
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     });
+  };
+
+  const handleTypeChange = (e: ChangeEvent<HTMLSelectElement>) => {
+    setType(e.target.value as 'student' | 'professor');
   };
 
   const validate = (): string => {
@@ -68,9 +78,9 @@ const Input: React.FC = () => {
     }
     try {
       if (id) {
-        await api.put(`/students/${id}`, formData);
+        await api.put(`/${type}s/${id}`, formData);
       } else {
-        await api.post(`/students`, formData);
+        await api.post(`/${type}s`, formData);
       }
       setFormData({
         name: '',
@@ -79,8 +89,8 @@ const Input: React.FC = () => {
       });
       navigate('/project1');
     } catch (error) {
-      setError(id ? 'Error updating student' : 'Error adding student');
-      console.error(id ? 'Error updating student:' : 'Error adding student:', error);
+      setError(id ? `Error updating ${type}` : `Error adding ${type}`);
+      console.error(id ? `Error updating ${type}:` : `Error adding ${type}:`, error);
     }
   };
 
@@ -97,7 +107,14 @@ const Input: React.FC = () => {
     <div className="input_overall">
       <form className="input_form" autoComplete="off" onSubmit={submitClick}>
         <div>
-          <label htmlFor="name" className="input_label">name: </label>
+          <label htmlFor="type" className="input_label">Type: </label>
+          <select id="type" name="type" value={type} onChange={handleTypeChange}>
+            <option value="student">Student</option>
+            <option value="professor">Professor</option>
+          </select>
+        </div>
+        <div>
+          <label htmlFor="name" className="input_label">Name: </label>
           <input
             value={formData.name}
             onChange={handleChange}
@@ -108,7 +125,6 @@ const Input: React.FC = () => {
             autoComplete="off"
           />
         </div>
-
         <div className="input_radio">
           <input
             type="radio"
@@ -119,7 +135,7 @@ const Input: React.FC = () => {
             className="radio_input"
             onChange={handleChange}
           />
-          <label htmlFor="male" className="radio_label">male</label>
+          <label htmlFor="male" className="radio_label">Male</label>
           <input
             type="radio"
             id="female"
@@ -129,11 +145,10 @@ const Input: React.FC = () => {
             className="radio_input"
             onChange={handleChange}
           />
-          <label htmlFor="female" className="radio_label">female</label>
+          <label htmlFor="female" className="radio_label">Female</label>
         </div>
-
         <div>
-          <label htmlFor="email" className="input_label">email: </label>
+          <label htmlFor="email" className="input_label">Email: </label>
           <input
             value={formData.email}
             onChange={handleChange}
@@ -147,10 +162,10 @@ const Input: React.FC = () => {
         {validationError && <p className="error">{validationError}</p>}
         <div className="input_buttons">
           <button className="input_submit" type="submit">
-            {id ? 'update' : 'add'}
+            {id ? 'Update' : 'Add'}
           </button>
           <button className="input_cancel" type="button" onClick={cancelClick}>
-            cancel
+            Cancel
           </button>
         </div>
       </form>

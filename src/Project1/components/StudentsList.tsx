@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./List.scss";
+import "./StudentsList.scss";
 import { Link } from 'react-router-dom';
 import api from "api";
 
@@ -10,7 +10,7 @@ interface Student {
   email: string;
 }
 
-const List: React.FC = () => {
+const StudentsList: React.FC = () => {
   const [students, setStudents] = useState<Student[]>([]);
   const [error, setError] = useState<string | null>(null);
 
@@ -43,10 +43,8 @@ const List: React.FC = () => {
 
   return (
     <>
-      {students.length === 0 ? (
-        <p>No students found</p>
-      ) : (
         <div className="list_overall">
+          <div className="list_heading">students</div>
           <table className="list_table">
             <thead>
               <tr>
@@ -65,19 +63,18 @@ const List: React.FC = () => {
                   <td>{student.sex}</td>
                   <td>{student.email}</td>
                   <td>
-                    <Link to={`/project1/${student.id}`} className="list_detail">detail</Link>
-                    <Link to={`/project1/${student.id}/edit`} className="list_edit">edit</Link>
+                    <Link to={`/project1/students/${student.id}`} className="list_detail">detail</Link>
+                    <Link to={`/project1/students/${student.id}/edit`} className="list_edit">edit</Link>
                     <button className="list_delete" onClick={() => deleteStudent(student.id)}>delete</button>
                   </td>
                 </tr>
               ))}
             </tbody>
           </table>
-          <Link to="/project1/add" className="list_button_add">add</Link>
+          <Link to="/project1/students/add" className="list_button_add">add</Link>
         </div>
-      )}
     </>
   );
 }
 
-export default List;
+export default StudentsList;

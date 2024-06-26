@@ -1,0 +1,72 @@
+.list_overall{
+    width : 100%;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content:flex-start;
+    margin-top: 2rem;
+    .list_heading{
+        padding:2rem;
+        font-size: 1.5rem;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    .list_table{
+        border:1px solid #ccc;
+        border-collapse: separate;
+        border-spacing: 1rem;
+       
+        .list_detail{
+            border:1px solid royalblue;
+            background-color: royalblue;
+            color:white;
+            text-decoration: none;
+            margin: 0 0.5rem;
+            padding:0.2rem 0.5rem;
+            font-size: 0.9rem;
+            &:hover{
+                background-color: white;
+                color:royalblue;
+            }
+        }
+        .list_edit{
+            border:1px solid royalblue;
+            background-color: royalblue;
+            color:white;
+            margin: 0 0.5rem;
+            padding:0.2rem 0.5rem;
+            font-size: 0.9rem;
+            text-decoration: none;
+            &:hover{
+                background-color: white;
+                color:royalblue;
+            }
+        }
+        .list_delete{
+            border:1px solid red;
+            background-color: red;
+            color:white;
+            margin: 0 0.5rem;
+            padding:0.2rem 0.5rem;
+            font-size: 0.9rem;
+            &:hover{
+                background-color: white;
+                color:red;
+            }
+        }
+    }
+
+    .list_button_add{
+        margin: 2rem 0 0 0;
+        padding:0.2rem 1rem;
+        border: 1px solid royalblue;
+        background-color: royalblue;
+        color:white;
+        text-decoration: none;
+        &:hover{
+            background-color: white;
+            color:royalblue;
+        }
+    }
+   
+    
+}

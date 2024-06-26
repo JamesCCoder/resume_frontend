@@ -8,9 +8,9 @@ import Info from "Project1/components/Info";
 const Detail: React.FC = () =>{
     return(
         <div className="detail_overall">
-        <Header />
-        <Info />
-        <Footer />
+            <Header />
+            <Info />
+            <Footer />
         </div>
        
     )
