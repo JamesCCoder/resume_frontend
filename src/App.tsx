@@ -16,6 +16,8 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 import Home from "./Home";
 
+import CursorEffect from 'MainPage/components/CursorEffect';
+
 const App: React.FC = () => {
   const location = useLocation();
   const [showHomePage, setShowHomePage] = useState(false);
@@ -24,6 +26,7 @@ const App: React.FC = () => {
   };
   return (
     <div className="App">
+      <CursorEffect />
       {!showHomePage && <IntroVideo onEnd={handleVideoEnd} />}
       {showHomePage && (
       <TransitionGroup>
