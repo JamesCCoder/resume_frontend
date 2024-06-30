@@ -2,7 +2,7 @@ import React,{useState, useEffect} from 'react';
 import './ColorChangeButton.scss';
 
 const ColorChangeButton: React.FC = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(true);
    useEffect(() => {
     if (isDarkMode) {
       document.body.classList.add('dark-mode');
