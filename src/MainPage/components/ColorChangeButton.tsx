@@ -13,6 +13,14 @@ const ColorChangeButton: React.FC = () => {
     }
   }, [isDarkMode]);
 
+  useEffect(() => {
+    const root = document.documentElement;
+    root.style.setProperty('--global-backcolor', 'rgb(30, 29, 38)');
+    root.style.setProperty('--global-fontcolor', 'white');
+    root.style.setProperty('--global-decocolor', 'rgb(0, 255, 165)');
+    root.style.setProperty('--global-decocolor-second', 'rgb(45, 44, 50)');
+  }, []);
+
   const handleClick = () => {
     setIsDarkMode(!isDarkMode);
     const root = document.documentElement;
