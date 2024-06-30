@@ -12,7 +12,7 @@ interface FormData {
 const Input: React.FC = () => {
   const navigate = useNavigate();
   const { id } = useParams<{ id: string }>();
-  const [formData, setFormData] = useState<FormData>({
+  const [formData, setFormData] = useState<any>({
     name: '',
     sex: '',
     email: ''
@@ -26,7 +26,8 @@ const Input: React.FC = () => {
       const fetchData = async () => {
         try {
           const response = await api.get(`/${type}s/${id}`);
-          setFormData(response.data);
+          setFormData(response.data[type]);
+          console.log(`response.data.${type}`);
         } catch (error) {
           setError(`Error fetching ${type} data`);
           console.error(`Error fetching ${type} data:`, error);

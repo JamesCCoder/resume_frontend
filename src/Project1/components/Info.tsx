@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./Info.scss";
 import api from "api";
 import { Link, useParams, useLocation } from 'react-router-dom';
+import axios from "axios";
 
 interface Student {
   id: string;
@@ -21,7 +22,9 @@ const Info: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const location = useLocation();
   const [student, setStudent] = useState<Student | null>(null);
+  const [relatedProfessors, setRelatedProfessors] = useState<string[]>([]);
   const [professor, setProfessor] = useState<Student | null>(null);
+  const [relatedStudents, setRelatedStudents] = useState<string[]>([]);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [type, setType] = useState('');
@@ -31,15 +34,28 @@ const Info: React.FC = () => {
       try {
         const path = location.pathname;
         let response;
-
+   
         if (path.includes('students')) {
           response = await api.get(`/students/${id}`);
+          
           setType('student');
-          setStudent(response.data);
+          setStudent(response.data.student);
+          // const professors = await Promise.all(
+          //   response.data.student.professors.map((professorId:string) =>
+          //     api.get(`/professors/${professorId}`)
+          //       .then(response => response.data)
+          //       .catch(error => null)
+          //   )
+          // );
+
+          // setRelatedProfessors(professors.filter(prof => prof !== null));
+          setRelatedProfessors(response.data.student.professors);
         } else if (path.includes('professors')) {
           response = await api.get(`/professors/${id}`);
+          
           setType('professor');
-          setProfessor(response.data);
+          setProfessor(response.data.professor);
+          setRelatedStudents(response.data.professor.students);
         }
       } catch (error) {
         setError('Error fetching data');
@@ -47,7 +63,7 @@ const Info: React.FC = () => {
         setLoading(false);
       }
     };
-
+    
     fetchData();
   }, [id, location.pathname]);
 
@@ -81,6 +97,15 @@ const Info: React.FC = () => {
               <td>email</td>
               <td>{student.email}</td>
             </tr>
+            <tr className="info_line">
+              <td>professors</td>
+              {relatedProfessors && relatedProfessors.map((relatedProfessor, id) =>{
+                return(
+                    <td key={id}>{relatedProfessor}</td>  
+                )
+              })}
+              
+            </tr>
           </tbody>
         </table>
         <div className="info_buttons">
@@ -108,6 +133,15 @@ const Info: React.FC = () => {
             <tr className="info_line">
               <td>email</td>
               <td>{professor.email}</td>
+            </tr>
+            <tr className="info_line">
+              <td>students</td>
+              {relatedStudents.map((relatedStudent, id) =>{
+                return(
+                    <td key={id}>{relatedStudent}</td>  
+                )
+              })}
+              
             </tr>
           </tbody>
         </table>
