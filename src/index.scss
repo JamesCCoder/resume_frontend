@@ -2,3 +2,15 @@
   padding:0;
   margin:0;
 }
+
+:root {
+  --global-backcolor: rgb(30, 29, 38); 
+  --global-fontcolor:white;
+  --global-decocolor:rgb(0, 255, 165);
+  --global-decocolor-second:rgb(45,44,50);
+
+  --global-other-backcolor:rgb(152, 251, 152);
+  --global-other-fontcolor: rgb(30, 29, 38);
+  --global-other-decocolor:rgb(0, 255, 165);
+  --global-other-decocolor-second:rgb(152, 251, 152);
+}

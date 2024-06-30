@@ -1,5 +1,5 @@
 .portfolio_footer{
-    background-color: rgb(30,29,38);
+    background-color: var(--global-backcolor);
     height:10rem;
     display: flex;
     align-items: center;
@@ -18,7 +18,7 @@
     }
     .portfolio_footer_first{
         margin:0 1rem;
-        color:white;
+        color:var(--global-fontcolor);
         display: flex;
         flex-direction: row;
         @media (max-width: 562px){
@@ -49,7 +49,7 @@
     }
     .portfolio_footer_second{
         margin:0 1rem;
-        color:white;
+        color:var(--global-fontcolor);
         display: flex;
         flex-direction: row;
         @media (max-width: 562px){
@@ -80,7 +80,7 @@
     }
     .portfolio_footer_third{
         margin:0 1rem;
-        color:white;
+        color:var(--global-fontcolor);
         display: flex;
         flex-direction: row;
         @media (max-width: 562px){
@@ -112,7 +112,7 @@
     }
     .portfolio_footer_fourth{
         margin:0 1rem;
-        color:white;
+        color:var(--global-fontcolor);
         display: flex;
         flex-direction: row;
         @media (max-width: 562px){

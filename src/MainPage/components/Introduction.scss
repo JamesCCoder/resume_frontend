@@ -1,8 +1,8 @@
 .portfolio_introduction{
-    background-color: rgb(30,29,38);
+    background-color: var(--global-backcolor);
     width:100%;
     height:37rem;
-    color:white;
+    color:var(--global-fontcolor);
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -63,7 +63,7 @@
            display: flex;
            align-items: center;
            font-size: 4rem;
-           color: rgb(0,255,165);
+           color: var(--global-decocolor);
            font-weight:bold;
             @media (max-width: 1550px) {
                 font-size: 3rem; 
@@ -144,9 +144,9 @@
                 margin-right:2rem;
                 }
                 .portfolio_cv{
-                    border:2px solid rgb(0,255,165);
-                    background-color: rgb(30,29,38);
-                    color:rgb(0,255,165);
+                    border:2px solid var(--global-decocolor);
+                    background-color: var(--global-backcolor);
+                    color:var(--global-decocolor);
                     border-radius: 50px;
                     width:10rem;
                     height:50%;
@@ -156,11 +156,11 @@
                     text-decoration: none;
                     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
                     &:hover{
-                        background-color: white;
+                        background-color: var(--global-fontcolor);
                         color:black;
                     }
                     &:focus{
-                        background-color: white;
+                        background-color: var(--global-fontcolor);
                         color:black;
                     }
                 }
@@ -184,12 +184,12 @@
                        margin-right: 0.5rem;
                    }
                    .portfolio_linkedinicon{
-                       color:rgb(0,255,165);
+                       color:var(--global-decocolor);
                        &:hover{
-                           color:white;
+                           color:var(--global-fontcolor);
                        }
                        &:focus{
-                           color:white;
+                           color:var(--global-fontcolor);
                        }
                    }
                    .github-link{
@@ -202,12 +202,12 @@
                    
                   
                    .portfolio_giticon{
-                       color:rgb(0,255,165);
+                       color:var(--global-decocolor);
                        &:hover{
-                           color:white;
+                           color:var(--global-fontcolor);
                        }
                        &:focus{
-                           color:white;
+                           color:var(--global-fontcolor);
                        }
                    }
                
@@ -257,7 +257,7 @@
         // width: 100%;
         // height: 100%;
         // border-radius: 50%;
-        // border: 3px solid rgb(0,255,165);
+        // border: 3px solid var(--global-decocolor);
         // top:-2rem;
         // box-sizing: border-box;
         // animation: rotate 5s linear infinite;
@@ -305,7 +305,7 @@
            display: flex;
            align-items: center;
            font-size: 4rem;
-           color: rgb(0,255,165);
+           color: var(--global-decocolor);
            font-weight:bold;
             @media (max-width: 1430px) {
                 font-size: 3.5rem; 

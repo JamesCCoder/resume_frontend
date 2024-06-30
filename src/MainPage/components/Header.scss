@@ -1,5 +1,5 @@
 .portfolio_header{
-    background-color: rgb(30,29,38);
+    background-color: var(--global-backcolor);
     width:100%;
     height:5rem;
     display: flex;
@@ -49,10 +49,10 @@
         .portfolio_header_left_name{
              font-family: 'Trebuchet MS', 'Arial Narrow', Arial, sans-serif;
              font-size: x-large;
-             color:white;
+             color:var(--global-fontcolor);
         }
         .portfolio_header_left_dot{
-             background-color:rgb(0,255,165);
+             background-color:var(--global-decocolor);
              height:0.3rem;
              width:0.3rem;
              border-radius: 50%;
@@ -77,79 +77,79 @@
            display: none;
         }
         .portfolio_header_right_home{
-             background-color: rgb(30,29,38);
+             background-color: var(--global-backcolor);
              margin: 0 1rem 0 0;
              font-family: 'Trebuchet MS', 'Arial Narrow', Arial, sans-serif;
-             color: white;
+             color: var(--global-fontcolor);
              font-size: small;
              font-weight: bold;
              padding:0.5rem 0;
              border:none;
              text-decoration: none;
              &:hover{
-                color:rgb(0,255,165);
-                box-shadow: 0 2px 0 0 rgb(0,255,165);
+                color:var(--global-decocolor);
+                box-shadow: 0 2px 0 0 var(--global-decocolor);;
              }
              &:focus{
-                color:rgb(0,255,165);
-                box-shadow: 0 2px 0 0 rgb(0,255,165);
+                color:var(--global-decocolor);
+                box-shadow: 0 2px 0 0 var(--global-decocolor);;
              }
         }
         .portfolio_header_right_projects{
             text-decoration: none;
-             background-color: rgb(30,29,38);
+             background-color: var(--global-backcolor);
              margin: 0 1rem;
              font-family: 'Trebuchet MS', 'Arial Narrow', Arial, sans-serif;
-             color: white;
+             color: var(--global-fontcolor);
              font-size: small;
              font-weight: bold;
              padding:0.5rem 0;
              border:none;
              &:hover{
-                color:rgb(0,255,165);
-                box-shadow: 0 2px 0 0 rgb(0,255,165);
+                color:var(--global-decocolor);
+                box-shadow: 0 2px 0 0 var(--global-decocolor);
              }
              &:focus{
-                color:rgb(0,255,165);
-                box-shadow: 0 2px 0 0 rgb(0,255,165);
+                color:var(--global-decocolor);
+                box-shadow: 0 2px 0 0 var(--global-decocolor);
              }
         }
         .portfolio_header_right_resume{
-             background-color: rgb(30,29,38);
+             background-color: var(--global-backcolor);
              text-decoration: none;
              margin: 0 1rem;
              font-family: 'Trebuchet MS', 'Arial Narrow', Arial, sans-serif;
-             color: white;
+             color: var(--global-fontcolor);
              font-size: small;
              font-weight: bold;
              padding:0.5rem 0;
              border:none;
              &:hover{
-                color:rgb(0,255,165);
-                box-shadow: 0 2px 0 0 rgb(0,255,165);
+                color:var(--global-decocolor);
+                box-shadow: 0 2px 0 0 var(--global-decocolor);
              }
              &:focus{
-                color:rgb(0,255,165);
-                box-shadow: 0 2px 0 0 rgb(0,255,165);
+                color:var(--global-decocolor);
+                box-shadow: 0 2px 0 0 var(--global-decocolor);
              }
         }
         .portfolio_header_right_contact{
             text-decoration: none;
-            background-color: rgb(30,29,38);
+            background-color: var(--global-backcolor);
             margin: 0 1rem;
             font-family: 'Trebuchet MS', 'Arial Narrow', Arial, sans-serif;
-            color: white;
+            color: var(--global-fontcolor);
             font-size: small;
             font-weight: bold;
             padding:0.5rem 0;
             border:none;
             &:hover{
-            color:rgb(0,255,165);
-            box-shadow: 0 2px 0 0 rgb(0,255,165);
+            color:var(--global-decocolor);
+            box-shadow: 0 2px 0 0 var(--global-decocolor);
             }
             &:focus{
-            color:rgb(0,255,165);
-            box-shadow: 0 2px 0 0 rgb(0,255,165);
+            color:var(--global-decocolor);
+            box-shadow: 0 2px 0 0 var(--global-decocolor);
             }
         }
         .portfolio_header_right_hireme{
@@ -157,8 +157,8 @@
              margin: 0 0 0 1rem;
              font-family: 'Trebuchet MS', 'Arial Narrow', Arial, sans-serif;
              color: black;
-             background-color: rgb(0,255,165);
-             border:1px solid rgb(0,255,165);
+             background-color: var(--global-decocolor);
+             border:1px solid var(--global-decocolor);
              width:5rem;
              display: flex;
              align-items: center;
@@ -168,12 +168,12 @@
              font-size: small;
              font-weight: bold;
              &:hover{
-                 background-color: white;
-                 border:1px solid white;
+                 background-color: var(--global-fontcolor);
+                 border:1px solid var(--global-fontcolor);
              }
              &:focus{
-                 background-color: white;
-                 border:1px solid white;
+                 background-color: var(--global-fontcolor);
+                 border:1px solid var(--global-fontcolor);
              }
         }
     }
@@ -184,7 +184,7 @@
         @media (max-width: 1045px){
            position: relative;
            display:block;
-           border:1px solid rgb(0,255,165);
+           border:1px solid var(--global-decocolor);
            top:0;
            display: flex;
            flex-direction: column;
@@ -205,7 +205,7 @@
         .hamburger_one{ 
             width:20px;
             height:3px;
-            background-color: rgb(0,255,165);
+            background-color: var(--global-decocolor);
             transition: 0.4s;
             margin:2px 0;
             // transform: rotate(-45deg);
@@ -223,13 +223,13 @@
         .hamburger_two{
             width:20px;
             height:3px;
-            background-color: rgb(0,255,165);
+            background-color: var(--global-decocolor);
             margin:2px 0;
         }
         .hamburger_three{
             width:20px;
             height:3px;
-            background-color: rgb(0,255,165);
+            background-color: var(--global-decocolor);
             transition: 0.4s;
             margin:2px 0;
             // transform: rotate(45deg);
@@ -249,7 +249,7 @@
   z-index: 20;
   top: 0;
   right: 0; 
-  background-color: rgb(30,29,38);
+  background-color: var(--global-backcolor);
   animation: slideInRight 0.3s forwards; 
   display: flex;
   flex-direction: column;
@@ -266,14 +266,14 @@
       align-items: center;
       justify-content: center;
       text-decoration: none;
-      color: rgb(0,255,165);
+      color: var(--global-decocolor);
       &:hover{
-                color:rgb(0,255,165);
-                box-shadow: 0 2px 0 0 rgb(0,255,165);
+                color:var(--global-decocolor);
+                box-shadow: 0 2px 0 0 var(--global-decocolor);
              }
              &:focus{
-                color:rgb(0,255,165);
-                box-shadow: 0 2px 0 0 rgb(0,255,165);
+                color:var(--global-decocolor);
+                box-shadow: 0 2px 0 0 var(--global-decocolor);
              }
   }
   .menu_two{
@@ -286,14 +286,14 @@
       align-items: center;
       justify-content: center;
       text-decoration: none;
-      color: rgb(0,255,165);
+      color: var(--global-decocolor);
       &:hover{
-                color:rgb(0,255,165);
-                box-shadow: 0 2px 0 0 rgb(0,255,165);
+                color:var(--global-decocolor);
+                box-shadow: 0 2px 0 0 var(--global-decocolor);
              }
              &:focus{
-                color:rgb(0,255,165);
-                box-shadow: 0 2px 0 0 rgb(0,255,165);
+                color:var(--global-decocolor);
+                box-shadow: 0 2px 0 0 var(--global-decocolor);
              }
   }
   .menu_three{
@@ -305,14 +305,14 @@
       align-items: center;
       justify-content: center;
       text-decoration: none;
-      color: rgb(0,255,165);
+      color: var(--global-decocolor);
       &:hover{
-                color:rgb(0,255,165);
-                box-shadow: 0 2px 0 0 rgb(0,255,165);
+                color:var(--global-decocolor);
+                box-shadow: 0 2px 0 0 var(--global-decocolor);
              }
              &:focus{
-                color:rgb(0,255,165);
-                box-shadow: 0 2px 0 0 rgb(0,255,165);
+                color:var(--global-decocolor);
+                box-shadow: 0 2px 0 0 var(--global-decocolor);
              }
   }
   .menu_four{
@@ -325,21 +325,21 @@
       align-items: center;
       justify-content: center;
       text-decoration: none;
-      color: rgb(0,255,165);
+      color: var(--global-decocolor);
       &:hover{
-                color:rgb(0,255,165);
-                box-shadow: 0 2px 0 0 rgb(0,255,165);
+                color:var(--global-decocolor);
+                box-shadow: 0 2px 0 0 var(--global-decocolor);
              }
              &:focus{
-                color:rgb(0,255,165);
-                box-shadow: 0 2px 0 0 rgb(0,255,165);
+                color:var(--global-decocolor);
+                box-shadow: 0 2px 0 0 var(--global-decocolor);
              }
   }
   .menu_button{
       position: absolute;
-      border:1px solid rgb(0,255,165);
+      border:1px solid var(--global-decocolor);
       border-radius: 50px;
-      background-color: rgb(30,29,38);
+      background-color: var(--global-backcolor);
       height:2rem;
       width:2rem;
       top:1rem;
@@ -350,7 +350,7 @@
         left:0.3rem;
         width:20px;
         height:3px;
-        background-color: rgb(0,255,165);
+        background-color: var(--global-decocolor);
         transform: rotate(-45deg);
       }
       .menu_button_two{
@@ -359,7 +359,7 @@
         height:3px;
         top:0.8rem;
         left:0.3rem;
-        background-color: rgb(0,255,165);
+        background-color: var(--global-decocolor);
         transform: rotate(45deg);
       }
   }

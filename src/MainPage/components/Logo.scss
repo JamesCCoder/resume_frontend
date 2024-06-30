@@ -14,9 +14,9 @@
 }
 .potfolio_logo{
     height:2.5rem;
-    color:white;
+    color:var(--global-fontcolor);
     :hover{
-        color:rgb(0,255,165);
+        color:var(--global-decocolor);
     }
  
 }
@@ -33,7 +33,7 @@
     justify-content: center;
     visibility: hidden;
     width: 100px;
-    background-color: white;
+    background-color: var(--global-fontcolor);
     color: black;
     text-align: center;
     border-radius: 6px;

@@ -1,6 +1,6 @@
 .App {
-  background-color: rgb(30,29,38);
-  color: white;
+  background-color: var(--global-backcolor);
+  color: var(--global-fontcolor);
 }
 
 .fade-enter {

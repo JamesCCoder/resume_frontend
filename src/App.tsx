@@ -20,14 +20,14 @@ import CursorEffect from 'MainPage/components/CursorEffect';
 
 const App: React.FC = () => {
   const location = useLocation();
-  const [showHomePage, setShowHomePage] = useState(false);
+  const [showHomePage, setShowHomePage] = useState(true);
   const handleVideoEnd = () => {
-    setShowHomePage(true);
+    setShowHomePage(false);
   };
   return (
     <div className="App">
-      <CursorEffect />
-      {!showHomePage && <IntroVideo onEnd={handleVideoEnd} />}
+      {/* <CursorEffect /> */}
+      {/* {!showHomePage && <IntroVideo onEnd={handleVideoEnd} />} */}
       {showHomePage && (
       <TransitionGroup>
         <CSSTransition

@@ -77,6 +77,7 @@ const Introduction: React.FC = () => {
                         Download Resume
                         </a>
                     </div>
+                    
                     <div className="portfolio_introduction_left_six_two">
                         <a
                             className="linkedin-link"
@@ -110,6 +111,7 @@ const Introduction: React.FC = () => {
                         {/* <div className="rotating-border"></div> */}
                         <Circle />
                     </div>
+                   
                 </div>
             </div>
         </div>

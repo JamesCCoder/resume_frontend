@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./Footer.scss";
 
+import ColorChangeButton from "./ColorChangeButton";
+
 const Footer: React.FC = () => {
     const [year, setYear] = useState<number>(0);
     const [project, setProject] = useState<number>(0);
@@ -67,24 +69,28 @@ const Footer: React.FC = () => {
     }, []);
 
     return (
-        <div className="portfolio_footer">
-            <div className="portfolio_footer_first">
-                <div className="portfolio_footer_first_one">{year}</div>
-                <div className="portfolio_footer_first_two">Years of Experience</div>
-            </div>
-            <div className="portfolio_footer_second">
-                <div className="portfolio_footer_second_one">{project}</div>
-                <div className="portfolio_footer_second_two">Projects completed</div>
-            </div>
-            <div className="portfolio_footer_third">
-                <div className="portfolio_footer_third_one">{technology}</div>
-                <div className="portfolio_footer_third_two">Technologies mastered</div>
-            </div>
-            <div className="portfolio_footer_fourth">
-                <div className="portfolio_footer_fourth_one">{code}</div>
-                <div className="portfolio_footer_fourth_two">Code commits</div>
-            </div>
+        <div>
+            <div className="portfolio_footer">
+                <div className="portfolio_footer_first">
+                    <div className="portfolio_footer_first_one">{year}</div>
+                    <div className="portfolio_footer_first_two">Years of Experience</div>
+                </div>
+                <div className="portfolio_footer_second">
+                    <div className="portfolio_footer_second_one">{project}</div>
+                    <div className="portfolio_footer_second_two">Projects completed</div>
+                </div>
+                <div className="portfolio_footer_third">
+                    <div className="portfolio_footer_third_one">{technology}</div>
+                    <div className="portfolio_footer_third_two">Technologies mastered</div>
+                </div>
+                <div className="portfolio_footer_fourth">
+                    <div className="portfolio_footer_fourth_one">{code}</div>
+                    <div className="portfolio_footer_fourth_two">Code commits</div>
+                </div>
+         </div>
+         <ColorChangeButton />
         </div>
+       
     );
 }
 
