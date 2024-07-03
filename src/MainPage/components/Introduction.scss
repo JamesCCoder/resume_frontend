@@ -82,12 +82,6 @@
                 font-size: 2rem;
                 margin-bottom: 1rem;
             }
-            // &::after{
-            //     margin-left: 0.5rem;
-            //     content: '|'; /* 使用竖线符号表示光标 */
-            //     color: white;
-            //     animation: blink-animation 2.5s step-end infinite;
-            // }
        }
             @keyframes blink-animation {
                 0%, 50% {
@@ -102,7 +96,7 @@
            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
            display: flex;
            align-items: center;
-           @media (max-width: 425px){
+           @media (max-width: 435px){
            text-align: center;
            justify-content: center;
            align-items: center;
@@ -116,7 +110,7 @@
            align-items: flex-start;
            height:40%;
            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
-           @media (max-width: 425px){
+           @media (max-width: 435px){
            text-align: center;
            justify-content: center;
            align-items: center;
